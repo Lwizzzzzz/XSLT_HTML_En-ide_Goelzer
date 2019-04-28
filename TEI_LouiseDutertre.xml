@@ -1,0 +1,1032 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Suite aux commentaires d'Ariane Pinche, et dans l'optique de la transformation XSLT, les erreurs du document d'origine 
+   ont été corrigées. Elles sont signalées tout au long du texte par des commentaires "CORRECTION". 
+   Les corrections afférentes ont été effectuées dans l'ODD pour que la validation puisse être effectuée. -->
+<?xml-model href="out/TRUE_ODDdevoir_TEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="out/TRUE_ODDdevoir_TEI.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+
+      <!-- ************************************ I- FILEDESC **********************************************-->
+      <fileDesc>
+
+         <!-- ************************************ A) titleStmt **********************************************-->
+         <titleStmt>
+            <title type="work">Enéide</title>
+            <title type="subtitle">Livres I à VI</title>
+            <author key="Virgile (0070-0019 av. J.-C.)"
+               source="https://catalogue.bnf.fr/ark:/12148/cb11887823w" xml:lang="fr"
+               >Virgile</author>
+            <!-- Très bon réflexe d'identification des entitées -->
+            <editor role="editor">Paris, Société d'Edition "Les Belles Lettres"</editor>
+         </titleStmt>
+         <editionStmt>
+            <edition>Texte numérisé en <date>2018</date> dans le cadre d'un devoir de fin de
+               semestre des Master 2 TNAH, <address>
+                  <addrLine>Ecole Nationale des Chartes</addrLine>
+                  <addrLine>65, rue de Richelieu</addrLine>
+                  <addrLine>Paris</addrLine>
+               </address>
+            </edition>
+         </editionStmt>
+         <extent/>
+
+         <!-- ************************************ B) publicationStmt **********************************************-->
+         <publicationStmt>
+            <publisher>Ecole Nationale des Chartes</publisher>
+            <pubPlace>Paris</pubPlace>
+            <date type="release">2018</date>
+         </publicationStmt>
+
+         <!-- ************************************ C) sourceDesc **********************************************-->
+
+         <sourceDesc>
+
+            <biblStruct xml:id="GOELZER">
+               <monogr>
+                  <author key="Virgile (0070-0019 av. J.-C.)"
+                     source="https://catalogue.bnf.fr/ark:/12148/cb11887823w" xml:lang="fr"
+                     >Virgile</author>
+                  <author key="Vergilius Maro, Publius (0070-0019 av. J.-C.)"
+                     source="https://catalogue.bnf.fr/ark:/12148/cb11887823w" xml:lang="lat"
+                     >Vergilius Maro, Publius</author>
+                  <author>Henri Goelzer</author>
+                  <author>André Bellesort</author>
+                  <title type="work" n="Aeneid">Enéide</title>
+                  <title type="subtitle">Livres I à VI</title>
+                  <imprint>
+                     <pubPlace>Paris</pubPlace>
+                     <publisher>Société d'Edition "Les Belles Lettres"</publisher>
+                     <date when="1961">1961</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+
+            <listWit>
+
+               <listWit>
+                  <head>Manuscrits antiques</head>
+                  <witness xml:id="A">Vatican, Biblioteca Apostolica Vaticana,
+                     Vat.lat.3256</witness>
+                  <witness xml:id="F">Vatican, Biblioteca Apostolica Vaticana,Codex Vat. lat. 3225,
+                        <date notBefore="0500">4e - 5e siècle</date></witness>
+                  <witness xml:id="F1">Vatican, Biblioteca Apostolica Vaticana,Codex Vat. lat. 3225,
+                        <date notBefore="0500">4e - 5e siècle</date></witness>
+                  <witness xml:id="G">Schedae Sangallenses rescriptae (1394), saec. IV</witness>
+                  <witness xml:id="M">Mediceus Laurentianus lat. Plut. XXXIX, 1, saec. V ex.
+                     (perierunt, 1, 1-6, 47)</witness>
+                  <witness xml:id="M1">Mediceus Laurentianus lat. Plut. XXXIX, 1, saec. V ex.
+                     (perierunt, 1, 1-6, 47), librarius ipse se corrigens</witness>
+                  <witness xml:id="M2">Mediceus Laurentianus lat. Plut. XXXIX, 1, saec. V ex.
+                     (perierunt, 1, 1-6, 47), ceteri correctores, ex quibus nullus satis certe
+                     Carolinae aetati adsignari potest; dubium an interdum Asterius ipse</witness>
+                  <witness xml:id="M3">Mediceus Laurentianus lat. Plut. XXXIX, 1, saec. V ex.
+                     (perierunt, 1, 1-6, 47), librarius ipse uel alia manus</witness>
+                  <witness xml:id="P">Vatican, Biblioteca Apostolica Vaticana,Codex Vat. lat. 1631,
+                        <date notBefore="0400" notAfter="0499">5e siècle</date></witness>
+                  <witness xml:id="P1">Vatican, Biblioteca Apostolica Vaticana,Codex Vat. lat. 1631,
+                        <date notBefore="0400" notAfter="0499">5e siècle</date>, Ajout de
+                     corrections</witness>
+                  <witness xml:id="P2">Vatican, Biblioteca Apostolica Vaticana,Codex Vat. lat. 1631,
+                        <date notBefore="0400" notAfter="0499">5e siècle</date></witness>
+                  <witness xml:id="R">Vatican, Biblioteca Apostolica Vaticana,Codex Vat. lat. 3225,
+                        <date notBefore="0300" notAfter="0499">IVe - Ve siècle</date></witness>
+                  <witness xml:id="V">Biblioteca Capitolare di Verona, Veronensis XL (38), <date
+                        when="0300">saec, IV</date>, rescriptus (supersunt 3, 27-52; 5, 86-6, 20; 7,
+                     12-37; 8, 19-44)</witness>
+                  <witness xml:id="π">Pap. Strasb. lat. 2, <date when="0300">saec. IV</date>
+                     (fragmentum 5, 17-34 continens)</witness>
+               </listWit>
+               <listWit>
+                  <!-- CORRECTION : les liens ont été mis dans un attribut (@facs) pour faciliter leur récupération par la suite -->
+                  <head>Manuscrits médiévaux (IXe-Xe siècle).</head>
+                  <witness xml:id="α" facs="http://e-codices.unifr.ch/fr/list/one/bbb/0172">Bern,
+                     Burgerbibliothek, Cod. 172: Vergilius: Bucolica, Georgica, Aeneis / Scholia
+                        Bernensia.<date when="0800">deuxième tiers du IXe siècle</date></witness>
+                  <witness xml:id="α2" facs="http://e-codices.unifr.ch/fr/list/one/bbb/0172">Bern,
+                     Burgerbibliothek, Cod. 172: Vergilius: Bucolica, Georgica, Aeneis / Scholia
+                        Bernensia.<date when="0800">deuxième tiers du IXe siècle</date></witness>
+                  <witness xml:id="b" facs="http://e-codices.unifr.ch/fr/list/one/bbb/0165">Bern,
+                     Burgerbibliothek, Cod. 165: Vergilius: Bucolica, Georgica, Aeneis / Scholia
+                     Turonensia, <date when="0800">deuxième quart du IXe siècle.</date></witness>
+                  <witness xml:id="b1" facs="http://e-codices.unifr.ch/fr/list/one/bbb/0165">Bern,
+                     Burgerbibliothek, Cod. 165: Vergilius: Bucolica, Georgica, Aeneis / Scholia
+                     Turonensia, <date when="0800">deuxième quart du IXe siècle.</date></witness>
+                  <witness xml:id="b2" facs="http://e-codices.unifr.ch/fr/list/one/bbb/0165">Bern,
+                     Burgerbibliothek, Cod. 165: Vergilius: Bucolica, Georgica, Aeneis / Scholia
+                     Turonensia, <date when="0800">deuxième quart du IXe siècle.</date></witness>
+                  <witness xml:id="c" facs="http://e-codices.unifr.ch/fr/list/one/bbb/0184">Bern,
+                     Burgerbibliothek, Cod. 184: Vergilius: Bucolica, Georgica, Aeneis / Scholia
+                     Bernensia</witness>
+                  <witness xml:id="c1" facs="http://e-codices.unifr.ch/fr/list/one/bbb/0184">Bern,
+                     Burgerbibliothek, Cod. 184: Vergilius: Bucolica, Georgica, Aeneis / Scholia
+                     Bernensia</witness>
+                  <witness xml:id="c2" facs="http://e-codices.unifr.ch/fr/list/one/bbb/0184">Bern,
+                     Burgerbibliothek, Cod. 184: Vergilius: Bucolica, Georgica, Aeneis / Scholia
+                     Bernensia</witness>
+               </listWit>
+               <listWit>
+                  <head>Manuscrits médiévaux (XIe-XIIe siècle).</head>
+                  <witness xml:id="γ">Wolfenbüttel, Herzog August Bibliothek, Codex Guelph Gudianus
+                     lat. 2° 69 (fos 86-114v - <date when="1100">première moitié du XIIe
+                        siècle</date>)</witness>
+                  <witness xml:id="γ1">Wolfenbüttel, Herzog August Bibliothek, Codex Guelph Gudianus
+                     lat. 2° 69 (fos 86-114v - <date when="1100">première moitié du XIIe
+                        siècle</date>)</witness>
+                  <witness xml:id="γ2">Wolfenbüttel, Herzog August Bibliothek, Codex Guelph Gudianus
+                     lat. 2° 69 (fos 86-114v - <date when="1100">première moitié du XIIe
+                        siècle</date>)</witness>
+                  <witness xml:id="π2">Pap. Strasb. lat. 2, saec. IV (fragmentum 5, 17-34
+                     continens), correctores vel variae lectiones fere eiusdem aetatis (perrato
+                     laudantur)</witness>
+                  <witness xml:id="m">Codex Minoraugiensis, <date when="1100">saec.
+                     XII</date></witness>
+               </listWit>
+               <listWit>
+                  <head>Commentateurs</head>
+                  <!-- CORRECTION : Les commentaires ont été mis dans une balise note pour faciliter leur récupération par la suite. -->
+                  <!-- CORRECTION : Les liens vers les sources ont été mis dans des attributs @facs. -->
+                  <witness xml:id="SERV"
+                     facs="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0053"
+                     >Maurus Servius Honoratus, Commentary on the Aeneid of Vergil Georgius Thilo,
+                     Ed, Leipzig,<date notBefore="1878" notAfter="1902"
+                        >1878-1902</date><note>L'édition de Georg Thilo et Hermann Hagen
+                        (Servianorum in Vergili Carmina Commentariorum) demeure la seule édition de
+                        l'ensemble des œuvres de Servius. Une version numérique a été mise en ligne
+                        sur Perseus.</note></witness>
+                  <witness xml:id="D.-SERV"
+                     facs="https://www.eruditio-antiqua.mom.r/vol4/EA4e.Vallat.pdf">Ajouts au
+                     Commentaire de Servius à l'Enéide<date when="1600">17e siècle</date><note>On
+                        désigne sous l'appellation Servius Danielis (SD) des ajouts au Commentaire
+                        de Servius à l'Enéide, qui ne sont pas de Servius et qui pour l'essentiel
+                        ont été publiés pour la première fois par Pierre Daniel à Paris en 1600, à
+                        partir de manuscrits anciens (9e - 10e siècle)</note>
+                  </witness>
+               </listWit>
+               
+            </listWit>
+
+            <listBibl>
+               <head>Bibliographie</head>
+               <bibl xml:id="RIBBECK">
+                  <title xml:lang="lat">P. Vergili Maronis opera: Prolegomena critica</title>
+                  <author key="Virgile (0070-0019 av. J.-C.)"
+                     source="https://catalogue.bnf.fr/ark:/12148/cb11887823w" xml:lang="fr"
+                     >Virgile</author>
+                  <author>Publius Vergilius Maro</author>
+                  <author>Otto Ribbeck</author>
+                  <publisher>Teubner</publisher>
+                  <date>1866</date>
+               </bibl>
+               <bibl xml:id="HAVET">
+                  <title xml:lang="fr">Manuel de Critique verbale</title>
+                  <author>Louis Havet</author>
+                  <publisher>Hachette</publisher>
+                  <pubPlace>Paris</pubPlace>
+                  <date when="1911">1911</date>
+               </bibl>
+               <bibl xml:id="KVICALA">
+                  <title xml:lang="de">Neue Beitraege zur Erklaerung der Aeneis : nebst Mehreren
+                     Excursen und Abhandlungen</title>
+                  <author>Jan Kvíčala</author>
+                  <publisher>F. Tempsky</publisher>
+                  <pubPlace>Prague</pubPlace>
+                  <date when="1881">1881</date>
+               </bibl>
+               <bibl xml:id="DEUTICKE">
+                  <title xml:lang="de">Vergils Gedichte. Zweites Bändchen, Aeneide Buch
+                     I-VI</title>
+                  <author key="Virgile (0070-0019 av. J.-C.)"
+                     source="https://catalogue.bnf.fr/ark:/12148/cb11887823w" xml:lang="fr"
+                     >Virgile</author>
+                  <author>Theodor Ladewig</author>
+                  <author>Carl Schaper</author>
+                  <author>Paul Deuticke</author>
+                  <publisher>Weidmann</publisher>
+                  <pubPlace>Berlin</pubPlace>
+                  <date when="1891">1891</date>
+               </bibl>
+               <bibl xml:id="HIRTZEL">
+                  <title xml:lang="lat">P. Vergili Maronis Opera</title>
+                  <author key="Virgile (0070-0019 av. J.-C.)"
+                     source="https://catalogue.bnf.fr/ark:/12148/cb11887823w" xml:lang="fr"
+                     >Virgile</author>
+                  <author>Fredericus Arturus Hirtzel</author>
+                  <publisher>Oxonii : E Typographeo Clarendiano</publisher>
+                  <date when="1900">1900</date>
+               </bibl>
+               <bibl xml:id="NONIUS">
+                  <title xml:lang="lat">De conpendiosa doctrina libros XX</title>
+                  <author key="Virgile (0070-0019 av. J.-C.)"
+                     source="https://catalogue.bnf.fr/ark:/12148/cb11887823w" xml:lang="fr"
+                     >Virgile</author>
+                  <author>Nonius Marcellus</author>
+                  <editor>W.M. Lindsay</editor>
+                  <publisher>Teubner</publisher>
+                  <pubPlace>Leipzig</pubPlace>
+                  <date when="1903">1903</date>
+               </bibl>
+               <bibl xml:id="PROBUS">
+                  <title xml:lang="lat">P.V.M. omnia opera: diligenti castigatione exculta:
+                     aptissimis ornata figuris: cōmentantibus Servio: Donato: Probo: Domitio:
+                     Landino: Antonio Mancinello. ... Additis insuper in Servium multis, etc.
+                     [Followed by the supplement to the Æneid by M. Vegius, and by the minor poems
+                     attributed to Virgil.] MS. notes [by Sir John Gresham and others].</title>
+                  <author key="Virgile (0070-0019 av. J.-C.)"
+                     source="https://catalogue.bnf.fr/ark:/12148/cb11887823w" xml:lang="fr"
+                     >Virgile</author>
+                  <author>Marcus Valerius Probus</author>
+                  <author>John Gresham</author>
+                  <author>Sir Lord Mayor of London</author>
+                  <author>Cristoforo Landino</author>
+                  <publisher>Per B. Zannis de Portesio: Venetiis</publisher>
+                  <date when="1510">1510</date>
+               </bibl>
+               <bibl xml:id="HEINSIUS">
+                  <title xml:lang="lat"> P. Virgilii Maronis Opera, nunc emendatiora. Auteur:
+                     Virgil. P. Virgilii Maronis Opera, nunc emendatiora. </title>
+                  <author key="Virgile (0070-0019 av. J.-C.)"
+                     source="https://catalogue.bnf.fr/ark:/12148/cb11887823w" xml:lang="fr"
+                     >Virgile</author>
+                  <author>Daniel Heinsius</author>
+                  <publisher>Lvgd. Batavor., ex officina Elzeviriana</publisher>
+                  <date when="1636">1636</date>
+               </bibl>
+               <bibl xml:id="PERSEUS">
+                  <title>Aeneid</title>
+                  <publisher>Trustees of Tufts University</publisher>
+                  <pubPlace>Medford, MA</pubPlace>
+                  <author key="Virgile (0070-0019 av. J.-C.)"
+                     source="https://catalogue.bnf.fr/ark:/12148/cb11887823w" xml:lang="fr"
+                     >Virgile</author>
+                  <author>Perseus Project</author>
+                  <date when="1997">1997</date></bibl>
+            </listBibl>
+
+         </sourceDesc>
+      </fileDesc>
+
+      <!-- ************************************ II - ENCODING DESC **********************************************-->
+
+      <encodingDesc>
+         <!-- CORRECTION : L'encodingDesc a été complété pour préciser selon quels principes l'apparat a été encodé. -->
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+         <projectDesc>
+            <p>Ce projet d'encodage se déroule dans le cadre du cours XML TEI de l'Ecole Nationale
+               des Chartes, dispensé par Mme Ariane Pinche. Ce devoir permet de mettre en
+               application les principales compétences acquises durant ce cycle de 12 séances. Le
+               sujet choisi ici concerne l'édition critique d'un extrait de l'Enéide, de Virgile, et
+               consiste notamment en la réalisation d'un apparat critique, basé sur les notes de
+               l'édition de 1961 de Goelzer. Les autres attendus portaient sur la réalisation d'un
+               index de noms de lieux et de personnages, du teiHeader, et d'une ODD restrictive à
+               partir d'ODD by Example. </p>
+         </projectDesc>
+      </encodingDesc>
+
+      <!-- ************************************ III- PROFILEDESC **********************************************-->
+
+      <profileDesc>
+
+         <langUsage>
+            <language ident="lat">Latin</language>
+         </langUsage>
+
+
+         <!-- ************************************ Index des noms de personnages **********************************************-->
+
+         <particDesc>
+            <listPerson>
+               <listPerson type="mortels">
+                  <!-- CORRECTION : Pour assurer une encodage plus solide,la mention "mortels" a été ajoutée dans un attribut @type sur listPerson -->
+                  <head>Mortels</head>
+                  <person xml:id="Didon">
+                     <persName type="Latin">Didon <addName type="Phénicien"
+                        >Elissa</addName></persName>
+                     <note>Reine de Carthage.</note>
+                  </person>
+                  <person xml:id="Enée">
+                     <persName>Enée </persName>
+                     <note>Prince des Troyens. Il est le fils du mortel Anchise et de la déesse
+                        Vénus.</note>
+                  </person>
+                  <person xml:id="Anna">
+                     <persName>Anna</persName>
+                     <note>Soeur de Didon.</note>
+                  </person>
+                  <person xml:id="Barce">
+                     <persName>Barcé</persName>
+                     <note>Nourrice d'Acherbas ayant accompagné Didon dans son exil.</note>
+                  </person>
+                  <person xml:id="Acherbas">
+                     <persName>Acherbas<addName> Sychée</addName></persName>
+                     <note>Prêtre de Melkart, défunt mari de Didon.</note>
+                  </person>
+                  <person xml:id="Ascagne">
+                     <persName>Ascagne</persName>
+                     <note>Fils d'Enée et de Créuse.</note>
+                  </person>
+                  <person xml:id="Pygmalion">
+                     <persName>Pygmalion</persName>
+                     <note>Frère de Didon, meurtrier d'Acherbas.</note>
+                  </person>
+               </listPerson>
+
+               <listPerson type="divinités">
+                  <!-- CORRECTION : La mention "divinités" a été ajoutée dans un attribut @type sur listPerson -->
+                  <head>Divinités</head>
+                  <person xml:id="Vénus">
+                     <persName>Vénus <addName xml:lang="grc">Aphrodite</addName></persName>
+                     <note>Vénus est dénommée dans notre extrait par son nom grec, Aphrodite,
+                        peut-être pour des questions de rythmique.</note>
+                  </person>
+                  <person xml:id="Mercure">
+                     <persName>Mercure</persName>
+                  </person>
+                  <person xml:id="Junon">
+                     <persName>Junon</persName>
+                  </person>
+                  <person xml:id="Jupiter">
+                     <persName>Jupiter</persName>
+                  </person>
+                  <person xml:id="Iris">
+                     <persName>Iris</persName>
+                  </person>
+                  <person xml:id="Proserpine">
+                     <persName>Proserpine</persName>
+                  </person>
+               </listPerson>
+
+            </listPerson>
+         </particDesc>
+
+         <!-- ************************************ Index des noms de lieux **********************************************-->
+
+         <settingDesc>
+            <listPlace>
+
+               <listPlace type="lieux_principaux">
+                  <!-- CORRECTION : La mention "lieux_principaux" a été ajoutée dans un attribut @type sur listPlace -->
+                  <head>Lieux principaux</head>
+                  <place xml:id="Carthage">
+                     <placeName>Carthage</placeName>
+                  </place>
+
+                  <place xml:id="Palais">
+                     <placeName>Palais de Didon</placeName>
+                  </place>
+
+                  <place xml:id="Port">
+                     <placeName>Port de Carthage</placeName>
+                  </place>
+               </listPlace>
+
+               <listPlace type="autres_lieux">
+                  <!-- CORRECTION : La mention "autres_lieux" a été ajoutée dans un attribut @type sur listPlace -->
+                  <head>Autres lieux</head>
+                  <place xml:id="Troie">
+                     <placeName>Troie<addName xml:lang="grc">Ilion</addName></placeName>
+                  </place>
+
+                  <place xml:id="Tyr">
+                     <placeName>Tyr</placeName>
+                  </place>
+
+                  <place xml:id="Sidon">
+                     <placeName>Sidon</placeName>
+                     <note>Ville du Liban</note>
+                  </place>
+               </listPlace>
+
+               <listPlace type="lieux_divins">
+                  <!-- CORRECTION : La mention "lieux_divins" a été ajoutée dans un attribut @type sur listPlace -->
+                  <head>Lieux divins</head>
+                  <place xml:id="Olympe">
+                     <placeName>Le mont Olympe</placeName>
+                  </place>
+               </listPlace>
+
+            </listPlace>
+         </settingDesc>
+
+      </profileDesc>
+      <revisionDesc>
+         <change when="2019-01-01" who="Louise Dutertre"> Encoded persNames and placesNames as well
+            as the critical apparatus.</change>
+         <change when="2015-12-01" who="Thibault Clérice"> Fixed numbering issue. Line numbering was
+            probably made using l@n (by group of 5, starting from last point every time). It did not
+            take l@n@part into account. Fixed. So some numbers did change </change>
+         <change when="2015-08-14" who="Zach Himes"> Converted from TEI edition at
+            https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi0690/phi003/phi0690.phi003.perseus-lat1.xml
+            Conversion involved: converting to CTS EpiDoc, converting div1 to div changed
+            ldquo,rdquo,uuml,ouuml,iuml to corresponding correct characters. fixed gap at 12.732 </change>
+         <change when="1996-10-16" who="WM"> Mark up public domain text downloaded from Libellus;
+            did diereses; pathetic lines tagged as L PART="Y"; needs line nos.</change>
+
+         <change when="2011-10-28" who="lcerrato"> fixed line number issue 795 appeared twice </change>
+
+         <change when="2011-01-17" who="gcrane"> base SDL files </change>
+
+         <change when="2010-07-13" who="lcerrato"> 2.338 ullo fremitus changed to quo fremitus
+            verified against source </change>
+
+         <change when="2009-12-09" who="rsingh04"> moved more xml files around based on copyright
+            status </change>
+
+         <change when="2009-01-12" who="rsingh04"> commented out extra chunking scheme </change>
+
+         <change when="2005-10-18" who="lcerrato"> candientem on 12.91 changed to candentem based on
+            user report and PHI </change>
+
+         <change when="2005-08-01" who="packel"> removed stray item tags </change>
+
+         <change when="2005-07-25" who="packel"> Converted to XML </change>
+
+         <change when="2005-03-23" who="lcerrato"> changed visus line 10.447 to visu based on
+            multiple sources </change>
+
+         <change when="2004-04-02" who="mimno"> added line 1 cards </change>
+
+         <change when="2003-07-01" who="yorkc"> Updated texts to TEI P4 and Perseus P4 extensions;
+            minor cleanup (esp. character encodings and typos.) </change>
+
+         <change when="2003-02-06" who="lcerrato"> fixed typo 5.627 eum freta to cum freta </change>
+
+         <change when="2000-03-04" who="dasmith"> Added separate funder entity to TEI header </change>
+
+         <change when="2000-02-22" who="textgod"> fixed multiple typos </change>
+
+         <change when="1999-10-25" who="lcerrato"> fixed typo 1.90 </change>
+
+         <change when="1999-10-16" who="lcerrato"> fixed typo </change>
+
+         <change when="1999-08-04" who="textgod"> Turned line milestones into cards. </change>
+
+         <change when="1999-08-04" who="textgod"> Remove TEXT N </change>
+
+         <change when="1999-08-04" who="textgod"> Don't use [lr]sqb. </change>
+
+         <change when="1999-08-04" who="textgod"> Fixed typos. </change>
+
+         <change when="1997-09-24" who="textgod"> Changed names and redid headers. </change>
+      </revisionDesc>
+
+   </teiHeader>
+
+   <text xml:lang="lat">
+      <!-- CORRECTION : Les commentaires ont été mis dans des balises "note" avec un attribut @type="commentaire" et un attribut @source. -->
+      <!-- CORRECTION : Un rdg et un # oublié ont été rajoutés. -->
+      <body>
+         <div type="edition" xml:lang="lat">
+            <div type="chant" n="1">
+               <p/>
+            </div>
+            <div type="chant" n="2">
+               <p/>
+            </div>
+            <div type="chant" n="3">
+               <p/>
+            </div>
+            <div type="chant" n="4">
+               <l n="504">At <persName ref="#Didon">regina</persName>, pyra penetrali in <placeName
+                     ref="#Palais">sede</placeName> sub auras</l>
+               <l n="505">erecta ingenti taedis atque ilice secta,</l>
+               <l n="506">intenditque <placeName ref="#Palais">locum</placeName> sertis, et fronde
+                  coronat</l>
+               <l n="507">funerea; super exuvias ensemque relictum</l>
+               <l n="508">effigiemque toro locat, haud ignara futuri.</l>
+               <l n="509">Stant arae circum, et crines effusa sacerdos</l>
+               <l n="510">ter centum tonat ore deos, Erebumque Chaosque,</l>
+               <l n="511">tergeminamque Hecaten, tria virginis ora Dianae.</l>
+               <l n="512">Sparserat et latices simulatos fontis Averni,</l>
+               <l n="513">falcibus et messae ad lunam quaeruntur aënis</l>
+               <l n="514">pubentes herbae nigri cum lacte veneni;</l>
+               <l n="515">quaeritur et nascentis equi de fronte revolsus</l>
+               <l n="516">et matri praereptus amor.</l>
+               <l n="517"><persName ref="#Didon">Ipsa</persName>
+                  <app>
+                     <lem wit="#F #α #b #SERV #HAVET"> mola<note target="#HAVET">F [cf. Havet §
+                           689]</note></lem>
+                     <rdg wit="#M #P #γ #c #RIBBECK">molam<note target="#RIBBECK">Ribbeck qui versum
+                           486 post hunc transposuit ut molam e spargens penderet.</note></rdg>
+                  </app> manibusque piis altaria iuxta,</l>
+               <l n="518">unum exuta pedem vinclis, in veste recincta,</l>
+               <l n="519">testatur moritura deos et conscia fati</l>
+               <l n="520">sidera; tum, si quod non aequo foedere amantes</l>
+               <l n="521">curae numen habet iustumque memorque, precatur.</l>
+               <l n="522">Nox erat, et placidum carpebant fessa soporem</l>
+               <l n="523">corpora per terras, silvaeque et saeva quierant</l>
+               <l n="524">aequora: cum medio volvuntur sidera lapsu,</l>
+               <l n="525">cum tacet omnis ager, pecudes pictaeque volucres,</l>
+               <l n="526">quaeque lacus late liquidos, quaeque aspera dumis</l>
+               <l n="527">rura tenent, <app>
+                     <lem wit="#M">somno</lem>
+                     <rdg wit="#P">somnos<note target="#HAVET">cf. Havet § 569</note></rdg>
+                  </app> positae sub nocte silenti</l>
+               <l n="528"><del>lenibant curas, et corda oblita laborum<note target="#RIBBECK">om.
+                        MPγ1α1b2c1m ignorat SERVIUS eicit Ribbeck legimus infra IX 225,</note><note
+                        target="#HAVET">cf. Havet § 1193.</note></del>.</l>
+               <l n="529">At non infelix animi <persName ref="#Didon">Phoenissa</persName>, nec
+                  umquam</l>
+               <l n="530">Solvitur in somnos, <app>
+                     <lem>oculisve</lem>
+                     <rdg wit="#P">oculis<note target="#HAVET">om. P cf. Havet § 421</note></rdg>
+                  </app> aut pectore noctem</l>
+               <l n="531">accipit: ingeminant curae, rursusque resurgens</l>
+               <l n="532">saevit amor, magnoque irarum fluctuat aestu.</l>
+               <l n="533">Sic adeo insistit, secumque <persName ref="#Didon">ita</persName> corde
+                  volutat:</l>
+               <l n="534"><said who="#Didon">En, quid <persName ref="#Didon">ago</persName>?
+                     Rursusne procos inrisa priores</said></l>
+               <l n="535"><said who="#Didon">experiar, Nomadumque petam conubia supplex,</said></l>
+               <l n="536"><said who="#Didon">quos <persName ref="#Didon">ego</persName>
+                     <app>
+                        <lem wit="#M #P #γ #α #b #c">sim</lem>
+                        <rdg wit="#γ2">sum</rdg>
+                     </app> totiens iam dedignata maritos?</said></l>
+               <l n="537"><said who="#Didon"><placeName ref="#Troie">Iliacas</placeName> igitur
+                     classes atque ultima Teucrum</said></l>
+               <l n="538"><said who="#Didon">iussa <app>
+                        <lem wit="#P">sequar ? quiane</lem>
+                        <rdg wit="#M">sequiane<note target="#HAVET">cf. Havet § 700</note></rdg>
+                     </app> auxilio iuvat ante levatos,</said></l>
+               <l n="539"><said who="#Didon"><app>
+                        <lem wit="#M #P #γ1 #α">et</lem>
+                        <rdg wit="#b #c #m">aut</rdg>
+                     </app> bene apud memores veteris stat gratia facti?</said></l>
+               <l n="540"><said who="#Didon">Quis me autem, fac velle, <app>
+                        <lem wit="#M #γ #α #b #c #SERV">sinet</lem>
+                        <rdg wit="#P">sinat</rdg>
+                     </app>, <persName ref="#Didon">ratibusve</persName> superbis</said></l>
+               <l n="541"><said who="#Didon"><app>
+                        <lem wit="#M #P">invisam<note target="#GOELZER">[cf. Goelzer p.
+                           350]</note></lem>
+                        <rdg wit="#M2 #γ2 #b1 #π">inrisam</rdg>
+                     </app> accipiet? Nescis heu, <persName ref="#Didon">perdita</persName>,
+                     necdum</said></l>
+               <l n="542"><said who="#Didon">Laomedonteae<note type="commentaire">Laomédon n'est pas
+                        présent dans l'index de noms de personnages car on désigne les Troyens par
+                        ce terme.</note> sentis periuria gentis?</said></l>
+               <l n="543"><said who="#Didon">Quid tum, <persName ref="#Didon">sola fuga</persName>
+                     nautas comitabor ovantes,</said></l>
+               <l n="544"><said who="#Didon">an Tyriis omnique manu stipata meorum</said></l>
+               <l n="545"><said who="#Didon"><app>
+                        <lem wit="#M2 #P #γ #α #b #c #D.-SERV">inferar et</lem>
+                        <rdg wit="#M">inferet<note target="#HAVET">cf. Havet § 443</note></rdg>
+                     </app>
+                     <app>
+                        <lem wit="#M">quos <placeName ref="#Sidon">Sidonia</placeName></lem>
+                        <rdg wit="#P">quosdonia<note target="#HAVET">cf. Havet § 689</note></rdg>
+                     </app> vix urbe revelli,</said></l>
+               <l n="546"><said who="#Didon">rursus agam pelago, et ventis dare vela
+                  iubebo?</said></l>
+               <l n="547"><said who="#Didon">Quin morere, ut merita es, ferroque averte
+                     dolorem.</said></l>
+               <l n="548"><said who="#Didon"><persName ref="#Anna">Tu</persName> lacrimis evicta
+                     meis, <persName ref="#Anna">tu</persName> prima furentem</said></l>
+               <l n="549"><said who="#Didon">his, germana, malis oneras atque obicis
+                  hosti.</said></l>
+               <l n="550"><said who="#Didon">Non licuit thalami expertem sine crimine
+                  vitam</said></l>
+               <l n="551"><said who="#Didon">degere, more ferae, tales nec tangere curas!</said></l>
+               <l n="552"><said who="#Didon">Non servata fides cineri promissa <persName
+                        ref="#Acherbas"><app>
+                           <lem wit="#P2 #γ #α #c #SERV">Sychaeo</lem>
+                           <rdg wit="#M">Sychaei</rdg>
+                           <rdg wit="#P1">Sychaeies</rdg>
+                        </app></persName>!”</said></l>
+               <l n="553">Tantos illa suo rumpebat pectore questus.</l>
+               <l n="554"><persName ref="#Enée">Aeneas</persName> celsa in <placeName ref="#Port"
+                     >puppi</placeName>, iam certus eundi,</l>
+               <l n="555">carpebat somnos, rebus iam rite paratis.</l>
+               <l n="556">Huic se forma <persName ref="#Mercure">dei</persName> voltu redeuntis
+                  eodem</l>
+               <l n="557">obtulit in somnis, rursusque <app>
+                     <lem>ita</lem>
+                     <rdg wit="#F"><note target="#HAVET">ita om. F cf. Havet § 422</note></rdg>
+                  </app> visa monere est—</l>
+               <l n="558">omnia <persName ref="#Mercure">Mercurio</persName> similis, vocemque
+                  coloremque</l>
+               <l n="559">et crinis flavos et membra decora <app>
+                     <lem wit="#P #γ #α #SERV">iuventae</lem>
+                     <rdg wit="#F #M #b2 #c #PERSEUS">iuventa</rdg>
+                  </app>:</l>
+               <l n="560"><said who="#Mercure">“<persName ref="#Enée">Nate <persName ref="#Vénus"
+                           >dea</persName></persName><note type="commmentaire">Enée est le fils du
+                        mortel Anchise et de la déesse Vénus (Aphrodite).</note> potes hoc sub casu
+                     ducere somnos,</said></l>
+               <l n="561"><said who="#Mercure">nec, quae te circum stent deinde pericula,
+                     cernis,</said></l>
+               <l n="562"><said who="#Mercure"><persName ref="#Enée">demens</persName>, nec Zephyros
+                     audis spirare secundos?</said></l>
+               <l n="563"><said who="#Mercure"><persName ref="#Didon">Illa</persName> dolos dirumque
+                     nefas in pectore versat,</said></l>
+               <l n="564"><said who="#Mercure">certa mori, <app>
+                        <lem wit="#P">variosque</lem>
+                        <rdg wit="#M">suarioque<note target="#HAVET">M cf. Havet § 1391</note></rdg>
+                        <rdg wit="#M2 #α #b1 #π #PERSEUS">uarioque<note target="#DEUTICKE">Haupt
+                              Deuticke</note></rdg>
+                     </app> irarum <app>
+                        <lem wit="#F #P #γ #c #m">concitat</lem>
+                        <rdg wit="#M #α #b #PERSEUS">fluctuat<note target="#DEUTICKE #HAVET">Haupt
+                              Deuticke cf. Havet § 1086</note></rdg>
+                     </app>
+                     <app>
+                        <lem wit="#F #P #γ #c #m">aestus</lem>
+                        <rdg wit="#M #α #b1 #π #DEUTICKE #PERSEUS">aestu</rdg>
+                     </app>.</said></l>
+               <l n="565"><said who="#Mercure">Non fugis <app>
+                        <lem wit="#M #P">hinc</lem>
+                        <rdg wit="#F1">in</rdg>
+                     </app> praeceps, dum praecipitare potestas?</said></l>
+               <l n="566"><said who="#Mercure">Iam mare turbari trabibus, saevasque
+                  videbis</said></l>
+               <l n="567"><said who="#Mercure">conlucere faces, iam fervere litora
+                  flammis,</said></l>
+               <l n="568"><said who="#Mercure">si te his attigerit terris Aurora
+                  morantem.</said></l>
+               <l n="569"><said who="#Mercure">Heia age, rumpe moras. Varium et mutabile
+                     semper</said></l>
+               <l n="570"><said who="#Mercure">femina.” </said>Sic fatus, nocti se <app>
+                     <lem wit="#M #P">immiscuit</lem>
+                     <rdg wit="#F">iammiscuit<note target="#HAVET">cf. Havet § 615</note></rdg>
+                  </app> atrae.</l>
+               <l n="571">Tum vero <persName ref="#Enée">Aeneas</persName>, subitis exterritus
+                  umbris,</l>
+               <l n="572">corripit e somno corpus, sociosque <app>
+                     <lem>fatigat</lem>
+                     <rdg wit="#KVICALA"><note target="#KVICALA">ita Kvicala : uulgo colon post
+                           fatigat ponunt</note></rdg>
+                  </app> :</l>
+               <l n="573"><said who="#Enée">“Praecipites vigilate, viri, et considite
+                     transtris;</said></l>
+               <l n="574"><said who="#Enée">solvite vela citi. <persName ref="#Mercure"
+                        >Deus</persName> aethere missus ab alto</said></l>
+               <l n="575"><said who="#Enée">festinare fugam tortosque incidere funes</said></l>
+               <l n="576"><said who="#Enée">ecce iterum <app>
+                        <lem wit="#M #α #b #SERV">stimulat</lem>
+                        <rdg wit="#F #P">instimulat<note target="#HAVET">cf. Havet §
+                           1067</note></rdg>
+                     </app>. Sequimur te, <persName ref="#Mercure">sancte
+                  deorum</persName>,</said></l>
+               <l n="577"><said who="#Enée">quisquis es, imperioque iterum paremus
+                  ovantes.</said></l>
+               <l n="578"><said who="#Enée">Adsis o placidusque iuves, et sidera caelo</said></l>
+               <l n="579"><said who="#Enée">dextra feras.”</said> Dixit, vaginaque eripit ensem</l>
+               <l n="580">fulmineum, strictoque ferit retinacula ferro.</l>
+               <l n="581">Idem omnes simul ardor habet, rapiuntque ruuntque;</l>
+               <l n="582">litora deseruere; latet sub classibus aequor;</l>
+               <l n="583">adnixi torquent spumas et caerula verrunt.</l>
+               <l n="584">Et iam prima novo spargebat lumine terras</l>
+               <l n="585">Tithoni croceum linquens Aurora cubile.</l>
+               <l n="586"><persName ref="#Didon">Regina</persName> e <placeName ref="#Palais"
+                     >speculis</placeName> ut <app>
+                     <lem wit="#P">primam</lem>
+                     <rdg wit="#M #γ2 #b #c #π #PERSEUS">primum</rdg>
+                  </app> albescere lucem</l>
+               <l n="587">vidit, et aequatis classem procedere velis,</l>
+               <l n="588">litoraque et vacuos sensit sine remige <placeName ref="#Port"
+                     >portus</placeName>,</l>
+               <l n="589">terque quaterque manu pectus percussa decorum,</l>
+               <l n="590">flaventesque abscissa comas, <said who="#Didon">“Pro <persName
+                        ref="#Jupiter">Iuppiter</persName>, <persName ref="#Enée"
+                     >ibit</persName></said></l>
+               <l n="591"><said who="#Didon">hic”</said>
+                  <persName ref="#Didon">ait</persName>
+                  <said who="#Didon">“et nostris inluserit advena regnis?</said></l>
+               <l n="592"><said who="#Didon">Non arma expedient, totaque ex <placeName
+                        ref="#Carthage">urbe</placeName> sequentur,</said></l>
+               <l n="593"><said who="#Didon"><app>
+                        <lem wit="#M #P #γ #α #b #c">diripientque<note>[cf. supr. I
+                           211]</note></lem>
+                        <rdg wit="#HEINSIUS #PERSEUS">deripientque</rdg>
+                     </app> rates alii navalibus? Ite,</said></l>
+               <l n="594"><said who="#Didon">ferte citi flammas, date <app>
+                        <lem wit="#M #P #γ #α #b #c">tela</lem>
+                        <rdg wit="#PERSEUS">vela<note>dett.</note></rdg>
+                     </app>, impellite remos!—</said></l>
+               <l n="595"><said who="#Didon">Quid loquor, aut ubi sum? Quae mentem insania
+                     mutat?</said></l>
+               <l n="596"><said who="#Didon"><persName ref="#Didon">Infelix Dido</persName>, <app>
+                        <lem wit="#M #γ #α #b #c #HEINSIUS">nunc</lem>
+                        <rdg wit="#P">nun</rdg>
+                        <rdg wit="PROBUS">num</rdg>
+                     </app> te facta <persName ref="#Enée">impia</persName> tangunt.</said></l>
+               <l n="597"><said who="#Didon">Tum decuit, cum sceptra dabas.—En dextra
+                     fidesque,</said></l>
+               <l n="598"><said who="#Didon">quem secum patrios <app>
+                        <lem wit="#P">aiunt</lem>
+                        <rdg wit="#M1">aiiunt<note target="#HAVET">cf. Havet §927</note></rdg>
+                     </app>
+                     <app>
+                        <lem wit="#P #γ #α #b #c">portare</lem>
+                        <rdg wit="#M">portasse<note>motus verbo subiisse quod sequitur [u.
+                              599]</note></rdg>
+                     </app> Penates,</said></l>
+               <l n="599"><said who="#Didon">quem subiisse <app>
+                        <lem wit="#M">umeris</lem>
+                        <rdg wit="#P1">umero</rdg>
+                     </app> confectum aetate parentem!</said></l>
+               <l n="600"><said who="#Didon">Non potui abreptum divellere corpus, et
+                  undis</said></l>
+               <l n="601"><said who="#Didon">spargere? Non socios, non ipsum absumere
+                  ferro</said></l>
+               <l n="602"><said who="#Didon"><persName ref="#Ascagne">Ascanium</persName>,
+                     patriisque epulandum <app>
+                        <lem wit="#M #P">ponere</lem>
+                        <rdg wit="#A">aponere<note>dett.</note></rdg>
+                     </app> mensis?—</said></l>
+               <l n="603"><said who="#Didon">Verum anceps pugnae fuerat fortuna:—fuisset.</said></l>
+               <l n="604"><said who="#Didon">Quem metui moritura? Faces in castra
+                  tulissem,</said></l>
+               <l n="605"><said who="#Didon">implessemque foros flammis, <persName ref="#Ascagne"
+                        >natumque</persName>
+                     <persName ref="#Enée">patremque</persName></said></l>
+               <l n="606"><said who="#Didon">cum genere extinxem, memet super ipsa
+                  dedissem.</said></l>
+               <l n="607">“Sol, qui terrarum flammis opera omnia lustras,</l>
+               <l n="608">tuque harum interpres curarum et conscia Iuno,</l>
+               <l n="609"><said who="#Didon">nocturnisque Hecate triviis ululata per
+                  urbes,</said></l>
+               <l n="610"><said who="#Didon">et Dirae ultrices, et <persName ref="#Didon">di
+                        morientis Elissae</persName><note type="commentaire"
+                        source="https://fr.wikipedia.org/wiki/Didon">Elissa est l'un des (nombreux)
+                        autres noms de Didon. Didon (latin : Dido), Elyssa, Elissa, Elisha, Elysha
+                        ou Hélissa. Elissa en phénicien ; Deidô, qui serait un nom libyen, que
+                        transcrit le latin Dido (devenu en français Didon)10, et qui signifierait «
+                        l'errante »; Theiossô en grec, qui traduit Elissa (El, « dieu » en
+                        phénicien, devenant Theos).</note>,</said></l>
+               <l n="611"><said who="#Didon">accipite haec, meritumque malis advertite
+                  numen,</said></l>
+               <l n="612"><said who="#Didon">et nostras audite preces. Si tangere portus</said></l>
+               <l n="613"><said who="#Didon"><persName ref="#Enée">infandum caput</persName> ac
+                     terris adnare necesse est,</said></l>
+               <l n="614"><said who="#Didon">et sic fata Iovis poscunt, hic terminus
+                  haeret:</said></l>
+               <l n="615"><said who="#Didon">at bello audacis populi vexatus et armis,</said></l>
+               <l n="616"><said who="#Didon">finibus extorris, <app>
+                        <lem wit="#M #P">complexu</lem>
+                        <rdg wit="NONIUS">conspectu</rdg>
+                     </app> avulsus <persName ref="#Ascagne">Iuli</persName>,</said></l>
+               <l n="617"><said who="#Didon">auxilium imploret, videatque indigna suorum</said></l>
+               <l n="618"><said who="#Didon">funera; nec, cum se sub leges pacis iniquae</said></l>
+               <l n="619"><said who="#Didon">tradiderit, regno aut optata luce fruatur,</said></l>
+               <l n="620"><said who="#Didon">sed cadat ante diem, mediaque inhumatus
+                  harena.</said></l>
+               <l n="621"><said who="#Didon">Haec precor, hanc vocem extremam cum sanguine
+                     fundo.</said></l>
+               <l n="622"><said who="#Didon">Tum vos, o Tyrii, stirpem et genus omne
+                  futurum</said></l>
+               <l n="623"><said who="#Didon">exercete odiis, cinerique haec mittite
+                  nostro</said></l>
+               <l n="624"><said who="#Didon">munera. Nullus amor populis, nec foedera
+                  sunto.</said></l>
+               <l n="625"><said who="#Didon">Exoriare aliquis nostris ex ossibus ultor,</said></l>
+               <l n="626"><said who="#Didon">qui face Dardanios ferroque sequare colonos,</said></l>
+               <l n="627"><said who="#Didon">nunc, olim, quocumque dabunt se tempore
+                  vires.</said></l>
+               <l n="628"><said who="#Didon">Litora litoribus contraria, fluctibus undas</said></l>
+               <l n="629"><said who="#Didon">imprecor, arma armis; pugnent ipsique <app>
+                        <lem wit="#M #P">nepotesque</lem>
+                        <rdg wit="#P2 #γ #α2 #π2">nepotes<note>om.</note><note target="#HAVET">cf.
+                              Havet §§ 1043, 1638</note></rdg>
+                     </app>.”</said></l>
+               <l n="630"><persName ref="#Didon">Haec</persName> ait, et partis animum versabat in
+                  omnis,</l>
+               <l n="631">invisam quaerens quam primum abrumpere lucem.</l>
+               <l n="632">Tum breviter <persName ref="#Barce">Barcen nutricem adfata <persName
+                        ref="#Acherbas"><app>
+                           <lem wit="#P">Sychaei</lem>
+                           <rdg wit="#M #c">Sychaei est</rdg>
+                        </app></persName></persName>;</l>
+               <l n="633">namque <placeName ref="#Tyr">suam patria antiqua</placeName> cinis ater
+                  habebat:</l>
+               <l n="634"><said who="#Didon">“<persName ref="#Anna">Annam</persName>
+                     <persName ref="#Barce">cara mihi nutrix</persName> huc siste <persName
+                        ref="#Anna">sororem</persName>;</said></l>
+               <l n="635"><said who="#Didon">dic corpus properet fluviali spargere
+                  lympha,</said></l>
+               <l n="636"><said who="#Didon">et pecudes secum et monstrata piacula ducat:</said></l>
+               <l n="637"><said who="#Didon">sic veniat; tuque ipsa pia tege tempora
+                  vitta.</said></l>
+               <l n="638"><said who="#Didon">Sacra <persName ref="#Jupiter">Iovi Stygio</persName>,
+                     quae rite incepta paravi,</said></l>
+               <l n="639"><said who="#Didon">perficere est animus, finemque imponere
+                  curis,</said></l>
+               <l n="640"><said who="#Didon"><persName ref="#Enée">Dardaniique</persName><note
+                        type="commentaire"
+                        source="https://fr.wikipedia.org/wiki/Dardanie_(Asie_Mineure)">Souvent pour
+                        les auteurs tardifs les termes « Troyens », « Dardaniens » (voire «
+                        Teucriens ») sont utilisés indistinctement pour nommer le peuple de
+                        Troade.</note> rogum capitis permittere flammae.”</said></l>
+               <l n="641">Sic ait: illa gradum studio <app>
+                     <lem wit="#M1 #α #b #c #π #D.-SERV">celerabat</lem>
+                     <rdg wit="#P #γ">celebrabat<note target="#D.-SERV">cf. D-SERVIUS "alii
+                           celebrabat legunt quia antiqui hoc verbum in velocitate ponebant ; Accius
+                           : celebri gradu gressum adcelerate"</note></rdg>
+                  </app>
+                  <persName ref="#Barce">
+                     <app>
+                        <lem wit="#γ2 #α #b1 #c">anilem<note target="#HAVET">[inilem P1 cf. Havet §
+                              472]</note></lem>
+                        <rdg wit="#M #D.-SERV #PERSEUS">anili</rdg>
+                     </app></persName>.</l>
+               <l n="642">At trepida, et coeptis immanibus effera <persName ref="#Didon"
+                     >Dido</persName>,</l>
+               <l n="643">sanguineam volvens aciem, maculisque trementis</l>
+               <l n="644">interfusa genas, et pallida morte futura,</l>
+               <l n="645">interiora <placeName ref="#Palais">domus</placeName> inrumpit limina, et
+                  altos</l>
+               <l n="646">conscendit furibunda <app>
+                     <lem wit="HIRTZEL">gradus<note target="#HIRTZEL">Hirtzel</note></lem>
+                     <rdg wit="#P1">radus</rdg>
+                     <rdg wit="#M #α #b #c #PERSEUS">rogos<note>editl. plerique</note></rdg>
+                     <rdg wit="#γ #γ1">ragos<note>corr. γ1</note></rdg>
+                  </app> ensemque recludit</l>
+               <l n="647"><persName ref="#Enée">Dardanium</persName>, non hos quaesitum munus in
+                  usus.</l>
+               <l n="648">Hic, postquam <persName ref="#Enée">Iliacas</persName> vestes notumque
+                  cubile</l>
+               <l n="649">conspexit, paulum lacrimis et mente morata,</l>
+               <l n="650">incubuitque toro, dixitque novissima verba:</l>
+               <l n="651"><said who="#Didon">“Dulces exuviae, dum fata deusque <app>
+                        <lem wit="#M #P #γ #α #b #c">sinebat</lem>
+                        <rdg wit="#F #P2 #PERSEUS">sinebant</rdg>
+                     </app>,</said></l>
+               <l n="652"><said who="#Didon">accipite hanc animam, meque his exsolvite
+                  curis.</said></l>
+               <l n="653"><said who="#Didon">Vixi, et, quem dederat cursum fortuna,
+                  peregi,</said></l>
+               <l n="654"><said who="#Didon">et nunc magna mei sub terras ibit imago.</said></l>
+               <l n="655"><said who="#Didon"><placeName ref="#Carthage">Urbem</placeName> praeclaram
+                     statui; mea moenia vidi;</said></l>
+               <l n="656"><said who="#Didon">ulta <persName ref="#Acherbas">virum</persName>, poenas
+                     inimico a <persName ref="#Pygmalion">fratre</persName> recepi;<note>655-656 :
+                        transponunt nonnulli codd. deteriores</note></said><note type="commentaire"
+                     source="https://fr.wikipedia.org/wiki/Didon">Virgile, par la voix de Didon fait
+                     ici référence à un épisode antérieur de l'existence de la princesse Phénicienne
+                     : selon la légende, Didon était l'épouse du grand prêtre de Melqart Acherbas,
+                     qui par son statut avait autant de pouvoir que le roi. Acherbas fut assassiné
+                     par Pygmalion, avide de richesses, ce qui provoqua la fuite d'Elissa, et
+                     ensuite la fondation de Carthage.</note></l>
+               <l n="657"><said who="#Didon">felix, heu nimium felix, si litora tantum</said></l>
+               <l n="658"><said who="#Didon">numquam Dardaniae tetigissent nostra
+                  carinae!”</said></l>
+               <l n="659">Dixit, et, os impressa toro, <said who="#Didon">“Moriemur
+                  inultae,</said></l>
+               <l n="660"><said who="#Didon">sed moriamur”</said> ait. <said who="#Didon">“<app>
+                        <lem>Sic, sic</lem>
+                        <rdg wit="#SERV">sic? sic<note>interpunxit</note></rdg>
+                     </app> iuvat ire sub umbras:</said></l>
+               <l n="661"><said who="#Didon">Hauriat hunc oculis ignem <persName ref="#Enée"
+                        >crudelis</persName> ab alto</said></l>
+               <l n="662"><said who="#Didon"><persName ref="#Enée">Dardanus</persName>, et <app>
+                     <lem wit="#F #P">nostrae secum</lem>
+                     <rdg wit="#M">secum nostrae</rdg>
+                  </app> ferat omina mortis.”</said></l>
+               <l n="663">Dixerat; atque <app>
+                     <lem wit="#M #P">illam media</lem>
+                     <rdg wit="#F">illa media<note target="#HAVET">cf. Havet § 639</note></rdg>
+                  </app> inter talia ferro</l>
+               <l n="664">conlapsam aspiciunt comites, ensemque cruore</l>
+               <l n="665">spumantem, sparsasque manus. <app>
+                     <lem>It<note>editt.</note></lem>
+                     <rdg wit="#P">id<note target="#HAVET">cf. Havet § 923</note></rdg>
+                     <rdg wit="#F #M">et<note target="#HAVET">cf. Havet § 889</note></rdg>
+                  </app> clamor ad alta</l>
+               <l n="666"><placeName ref="#Palais">atria</placeName>; concussam bacchatur Fama per
+                     <placeName ref="#Carthage">urbem</placeName>.</l>
+               <l n="667">Lamentis <app>
+                     <lem wit="#F #P">gemituque</lem>
+                     <rdg wit="#M">cum gemituque<note target="#HAVET">cf. Havet § 1321</note></rdg>
+                  </app> et femineo ululatu</l>
+               <l n="668">tecta fremunt; resonat magnis <app>
+                     <lem wit="#F #M">plangoribus</lem>
+                     <rdg wit="#P #α">clangoribus</rdg>
+                  </app> aether,</l>
+               <l n="669">non aliter, quam si immissis <app>
+                     <lem wit="#F #M">ruat</lem>
+                     <rdg wit="#P1">ruit</rdg>
+                  </app> hostibus omnis</l>
+               <l n="670"><placeName ref="#Carthage">Karthago</placeName> aut <placeName ref="#Tyr"
+                     >antiqua Tyros</placeName>, flammaeque furentes</l>
+               <l n="671">culmina perque hominum <app>
+                     <lem wit="#F">volvantur</lem>
+                     <rdg wit="#M">uolantur</rdg>
+                     <rdg wit="#P1 #γ2 #c1">uoluuntur<note target="#HAVET">cf. Havet §
+                        1369</note></rdg>
+                  </app> perque deorum.</l>
+               <l n="672">Audiit exanimis, trepidoque exterrita cursu</l>
+               <l n="673">unguibus ora <persName ref="#Anna">soror</persName> foedans et pectora
+                  pugnis</l>
+               <l n="674">per medios ruit, ac morientem nomine clamat:</l>
+               <l n="675"><said who="#Anna">“Hoc illud, <persName ref="#Didon">germana</persName>,
+                     fuit? <persName ref="#Anna">Me</persName> fraude petebas?</said></l>
+               <l n="676"><said who="#Anna">Hoc rogus iste mihi, hoc <app>
+                        <lem wit="#M #P">ignes araeque</lem>
+                        <rdg wit="#F">ignesque<note target="#HAVET">cf. Havet § 425</note></rdg>
+                     </app> parabant?</said></l>
+               <l n="677"><said who="#Anna">Quid primum deserta querar? Comitemne <persName
+                        ref="#Anna">sororem</persName></said></l>
+               <l n="678"><said who="#Anna">sprevisti moriens? Eadem me ad fata vocasses:</said></l>
+               <l n="679"><said who="#Anna">idem ambas ferro dolor, atque eadem hora
+                     tulisset.</said></l>
+               <l n="680"><said who="#Anna">His etiam struxi manibus, patriosque vocavi</said></l>
+               <l n="681"><said who="#Anna">voce deos, sic te ut posita <persName ref="#Anna"
+                        >crudelis</persName><note target="#HIRTZEL">crudelis pro vocativo habent
+                        Wagner [in ed. maiore] Hirtzel Pichon pro nominativo Henry Forbiger Lejay
+                        alii.</note> abessem<note target="#RIBBECK">post abessem non signum
+                        interrogandi sed punctum ponunt Ribbeck Ladewig Forbiger.</note>?</said></l>
+               <l n="682"><said who="#Anna">Exstinxti <persName ref="#Anna #Didon"><app>
+                           <lem wit="#F #M #P #γ #α #b #c">te meque</lem>
+                           <rdg wit="#A">me teque<note>dett.</note></rdg>
+                        </app></persName>, <persName ref="#Didon">soror</persName>, populumque
+                     patresque</said></l>
+               <l n="683"><said who="#Anna">Sidonios urbemque tuam. Date volnera lymphis</said></l>
+               <l n="684"><said who="#Anna"><app>
+                        <lem wit="#F #M">abluam, et, extremus</lem>
+                        <rdg wit="#P">abluam extremus<note target="#HAVET">cf. Havet §
+                           447</note></rdg>
+                     </app> si quis super halitus errat,</said></l>
+               <l n="685"><said who="#Anna">ore legam.”</said> Sic fata, gradus evaserat altos,</l>
+               <l n="686">semianimemque sinu <persName ref="#Didon"><app>
+                        <lem wit="#M #P">germanam</lem>
+                        <rdg wit="#F"><note target="#HAVET">cf. Havet § 613</note></rdg>
+                     </app></persName> amplexa fovebat</l>
+               <l n="687">cum gemitu, atque <app>
+                     <lem wit="#F #M">atros siccabat</lem>
+                     <rdg wit="#P">atrosiccabat<note target="#HAVET">cf. Havet § 689</note></rdg>
+                  </app> veste cruores.</l>
+               <l n="688"><persName ref="#Didon">Illa</persName>, graves oculos conata attollere,
+                  rursus</l>
+               <l n="689">deficit; infixum <app>
+                     <lem wit="#M #P #γ #α">stridit</lem>
+                     <rdg wit="#b #c">stridet</rdg>
+                  </app> sub pectore vulnus.</l>
+               <l n="690">Ter sese <app>
+                     <lem wit="#M">attollens</lem>
+                     <rdg wit="#P1">attollit</rdg>
+                     <rdg wit="#P2">attollet</rdg>
+                  </app> cubitoque <app>
+                     <lem wit="#M #P #γ2 #α #b #c2 #HEINSIUS">adnixa</lem>
+                     <rdg wit="#m">innixa</rdg>
+                  </app> levavit;</l>
+               <l n="691">ter revoluta toro est, <persName ref="#Didon">oculisque
+                     errantibus</persName> alto</l>
+               <l n="692">quaesivit caelo lucem, ingemuitque <app>
+                     <lem wit="#P">reperta</lem>
+                     <rdg wit="#M1 #γ #b #c2 #π">repertam</rdg>
+                  </app>.</l>
+               <l n="693">Tum <persName ref="#Junon">Iuno omnipotens</persName>, longum miserata
+                  dolorem</l>
+               <l n="694">difficilisque obitus, <persName ref="#Iris">Irim</persName> demisit
+                     <placeName ref="#Olympe">Olympo</placeName>,</l>
+               <l n="695">quae luctantem <persName ref="#Didon">animam</persName> nexosque
+                  resolveret artus.</l>
+               <l n="696">Nam quia nec fato, merita nec morte peribat,</l>
+               <l n="697">sed <persName ref="#Didon">misera</persName> ante diem, subitoque accensa
+                  furore,</l>
+               <l n="698"><app>
+                     <lem wit="#M">nondum</lem>
+                     <rdg wit="#P #γ">necdum</rdg>
+                  </app> illi flavum <persName ref="#Proserpine">Proserpina</persName>vertice
+                  crinem</l>
+               <l n="699">abstulerat, Stygioque caput damnaverat Orco.</l>
+               <l n="700">Ergo <persName ref="#Iris">Iris</persName> croceis per caelum roscida
+                  pennis,</l>
+               <l n="701">mille trahens varios adverso sole colores,</l>
+               <l n="702">devolat, et supra caput adstitit: <said who="#Iris">“Hunc ego
+                  Diti</said></l>
+               <l n="703"><said who="#Iris">sacrum iussa fero, teque isto corpore solvo.”</said></l>
+               <l n="704">Sic ait, et <persName ref="#Iris">dextra</persName>
+                  <persName ref="#Didon">crinem</persName> secat: omnis et una</l>
+               <l n="705">dilapsus calor, atque in ventos <persName ref="#Didon">vita</persName>
+                  recessit.</l>
+            </div>
+            <div type="chant" n="5">
+               <p/>
+            </div>
+            <div type="chant" n="6">
+               <p/>
+            </div>
+            <div type="chant" n="7">
+               <p/>
+            </div>
+            <div type="chant" n="8">
+               <p/>
+            </div>
+            <div type="chant" n="9">
+               <p/>
+            </div>
+            <div type="chant" n="10">
+               <p/>
+            </div>
+            <div type="chant" n="11">
+               <p/>
+            </div>
+            <div type="chant" n="12">
+               <p/>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>

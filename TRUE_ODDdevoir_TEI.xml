@@ -1,0 +1,1316 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- ODD maitrisée, quelques réglages à faire avec schematron, voir les corrections au fil du code-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
+   xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Édition nativement numérique d'un extrait du Chant IV de <hi>l'Enéide</hi> de
+               Virgile d'après l'édition critique de Henri Goelzer de 1861, parue aux
+               Belles-Lettres.</title>
+            <author>Louise Dutertre</author>
+         </titleStmt>
+         <publicationStmt>
+            <p>Ecole Nationale des Chartes, Paris.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Derived from an analysis of 1 files from
+               file:/home/lwiz/Bureau/Devoir%20TEI%20%20Final/</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div1>
+            <head>Guide d'encodage de l'édition de <hi>l'Enéide</hi> de Virgile d'après l'édition
+               des Belles-Lettres de Goelzer de 1861</head>
+            <p>Cette documentation a pour but de justifier les choix réalisés pour encoder cette
+               édition critique dans le cadre du cours de XML TEI du Master 2 TNAH de l'Ecole des
+               Chartes. Des principes stricts d’encodage ont été respectés : l’intégralité de
+               l’encodage proposé est donc <hi>TEI conformant</hi>. L'extrait encodé concerne les
+               vers <hi>504 à 705</hi> du <hi rend="italic">chant 4</hi> de l'Enéide. Cette édition
+               n'étant pas nativement numérique, nous avons utilisé le texte du <hi>projet
+                  Perseus</hi> en prêtant attention aux éventuelles variations.</p>
+            <div2>
+               <head>La structuration du TEIheader</head>
+               <div3>
+                  <head>Structurer le TEIheader</head>
+                  <p>Le <gi>teiHeader</gi> comporte trois grandes sections : <specList>
+                        <specDesc key="fileDesc"/>
+                        <specDesc key="encodingDesc"/>
+                        <specDesc key="profileDesc"/>
+                     </specList>
+                  </p>
+                  <div4>
+                     <head>Le fileDesc</head>
+                     <p>Le <gi>fileDesc</gi> comporte lui-même : <specList>
+                           <specDesc key="titleStmt"/>
+                           <specDesc key="publicationStmt"/>
+                           <specDesc key="sourceDesc"/>
+                        </specList> Le <gi>sourceDesc</gi> contient les informations nécessaires sur
+                        l'édition de base<note>Il s'agit de l'édition des Belles-Lettres de 1961 de
+                           Henri Goelzer, consultable notamment à la Bibliothèque Nationale de
+                           France.</note>.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <biblStruct xml:id="GOELZER">
+                           <monogr>
+                              <author key="Virgile (0070-0019 av. J.-C.)"
+                                 source="https://catalogue.bnf.fr/ark:/12148/cb11887823w"
+                                 xml:lang="fr">Virgile</author>
+                              <author key="Vergilius Maro, Publius (0070-0019 av. J.-C.)"
+                                 source="https://catalogue.bnf.fr/ark:/12148/cb11887823w"
+                                 xml:lang="lat">Vergilius Maro, Publius</author>
+                              <author>Henri Goelzer</author>
+                              <author>André Bellesort</author>
+                              <title type="work" n="Aeneid">Enéide</title>
+                              <title type="subtitle">Livres I à VI</title>
+                              <imprint>
+                                 <pubPlace>Paris</pubPlace>
+                                 <publisher>Société d'Edition "Les Belles Lettres"</publisher>
+                                 <date when="1961">1961</date>
+                              </imprint>
+                           </monogr>
+                        </biblStruct>
+                     </egXML>
+                     <p>Il permet également de déclarer l'ensemble des temoins de la tradition et de
+                        leur attribuer un identifiant auquel l'apparat pourra se référer pour
+                        identifier les differentes leçons. Cet identfiant est attribué grâce à
+                        l'attribut <att>xml:id</att> de l'élément <gi>witness</gi>. <egXML
+                           xmlns="http://www.tei-c.org/ns/Examples">
+                           <witness xml:id="A">Vatican, Biblioteca Apostolica Vaticana,
+                              Vat.lat.3256</witness>
+                        </egXML>
+                     </p>
+                  </div4>
+                  <div4>
+                     <head>Le SourceDesc</head>
+                     <p>Le<gi>sourceDesc</gi> permet de décrire la source à partir de laquelle un
+                        document électronique a pu être généré. Si l'on a affaire à un texte
+                        numérisé comme c'est le cas ici, on peut faire le choix de réaliser une
+                        description bibliographique. </p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <biblStruct xml:id="GOELZER">
+                           <monogr>
+                              <author key="Virgile (0070-0019 av. J.-C.)"
+                                 source="https://catalogue.bnf.fr/ark:/12148/cb11887823w"
+                                 xml:lang="fr">Virgile</author>
+                              <author key="Vergilius Maro, Publius (0070-0019 av. J.-C.)"
+                                 source="https://catalogue.bnf.fr/ark:/12148/cb11887823w"
+                                 xml:lang="lat">Vergilius Maro, Publius</author>
+                              <author>Henri Goelzer</author>
+                              <author>André Bellesort</author>
+                              <title type="work" n="Aeneid">Enéide</title>
+                              <title type="subtitle">Livres I à VI</title>
+                              <imprint>
+                                 <pubPlace>Paris</pubPlace>
+                                 <publisher>Société d'Edition "Les Belles Lettres"</publisher>
+                                 <date when="1961">1961</date>
+                              </imprint>
+                           </monogr>
+                        </biblStruct></egXML>
+                     <p>Dans le cadre de l'encodage d'un apparat critique comme nous le faisons ici,
+                        la liste des témoins s'insère dans le <gi>sourceDesc</gi>, au sein d'une
+                        balise <gi>listWit</gi>, qui permet de lister les définitions de tous les
+                        témoins auxquels se réfère l'apparat critique. Chaque témoin est compris
+                        dans une balise <gi>witness</gi> dont l'attribut <gi>xml:id</gi> permettra
+                        de lier chaque leçon ou lemme au témoin correspondant, dans le corps du
+                        texte.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <witness xml:id="A">Vatican, Biblioteca Apostolica Vaticana,
+                           Vat.lat.3256</witness>
+                     </egXML>
+                     <p>Ici, j'ai fait le choix de créer des sous-parties dans mon <gi>listWit</gi>
+                        à l'aide de balises <gi>listWit</gi> imbriquées. En réalité, et selon les
+                        TEI Guidelines, cette fonction est surtout utile dans le cas de traductions
+                        similaires au sein de manuscrits différents. Elle permet de faire des
+                        groupes de manuscrits et de faire référence ensuite au groupe en question
+                        sans faire référence systématiquement à tous les manuscrits concernés.
+                        Toutefois, j'ai choisi d'utiliser cette fonction ici pour créer des
+                        sous-ensembles au sein de ce listWit, ce afin de différencier les
+                        différentes périodes propres à chaque témoin.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <listWit>
+                           <listWit>
+                              <head>Manuscrits médiévaux (IXe-Xe siècle).</head>
+                              <witness xml:id="α">Bern, Burgerbibliothek, Cod. 172: Vergilius:
+                                 Bucolica, Georgica, Aeneis / Scholia Bernensia
+                                    (http://e-codices.unifr.ch/fr/list/one/bbb/0172).<date
+                                    when="0800">deuxième tiers du IXe siècle</date>.</witness>
+                           </listWit>
+                        </listWit>
+                     </egXML>
+                     <p>Parallèlement aux témoins qui se trouvent plus bas dans mon listWit,
+                        certains ouvrages ont été encodés au sein d'une <gi>listBibl</gi> dans une
+                        balise <gi>bibl</gi> pour créer une bibliographie. Cet encodage différencié
+                        a été adopté lorsque les ouvrages auxquels Goelzer faisait référence dans
+                        les notes de bas de page n'apparaissaient pas explicitement comme des
+                        manuscrits témoins dans la table des sigles de l'édition des Belles Lettres.
+                        Cette bibliographie contient également le texte issu du projet Perseus dans
+                        la mesure où nous souhaitions encoder les variations par rapport à l'édition
+                        de Goelzer dans le cadre de ce projet d'encodage. </p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <listBibl>
+                           <bibl xml:id="HAVET">
+                              <title xml:lang="fr">Manuel de Critique verbale</title>
+                              <author>Louis Havet</author>
+                              <publisher>Hachette</publisher>
+                              <pubPlace>Paris</pubPlace>
+                              <date when="1911">1911</date>
+                           </bibl>
+                        </listBibl>
+                     </egXML>
+                  </div4>
+                  <div4>
+                     <head>L'encodingDesc</head>
+                     <p>L'<gi>encodingDesc</gi> permet de donner des informations sur l'encodage du
+                        fichier XML. Ici, il a permis de donner des précisions sur le contexte de ce
+                        projet d'encodage. <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <encodingDesc>
+                              <projectDesc>
+                                 <p>Ce projet d'encodage se déroule dans le cadre du cours XML TEI
+                                    de l'Ecole Nationale des Chartes, dispensé par Mme Ariane
+                                    Pinche. Ce devoir permet de mettre en application les
+                                    principales compétences acquises durant ce cycle de 12 séances.
+                                    Le sujet choisi ici concerne l'édition critique d'un extrait de
+                                    l'Enéide, de Virgile, et consiste notamment en la réalisation
+                                    d'un apparat critique, basé sur les notes de l'édition de 1961
+                                    de Goelzer. Les autres attendus portaient sur la réalisation
+                                    d'un index de noms de lieux et de personnages, du teiHeader, et
+                                    d'une ODD restrictive à partir d'ODD by Example. </p>
+                              </projectDesc>
+                           </encodingDesc></egXML></p>
+                  </div4>
+                  <div4>
+                     <head>Le profileDesc</head>
+                     <p>Le <gi>profileDesc</gi> contient les notices de tous les noms de personnage
+                        et de lieux apparaissant dans le fichier. Chacune des notices possède un
+                        identifiant vers lequel vient pointer chacune des apparitions du lieu ou du
+                        personnage dans l'épopée de Virgile. Cette méthode permet de générer
+                        automatiquement à partir des fichiers XML les index des noms de lieux et des
+                        noms propres.</p>
+                     <p>La création d’un index de noms de lieux et de personnages peut se faire de
+                        plusieurs manières. On peut par exemple choisir de placer cet index au sein
+                        d’un élément <gi>front</gi>, à l’intérieur de l’élément texte. Toutefois, il
+                        est possible aussi de le placer dans le <gi>Teiheader</gi>, au sein de
+                        l’élément <gi>profileDesc</gi>, ce que j’ai choisi de faire au sein de ce
+                        projet d’encodage. L’index est réalisé au moyen d’une <gi>listPerson</gi> ou
+                           <gi>listPlace</gi> qui contient des éléments <gi>person</gi> ou
+                           <gi>place</gi>. Au sein de ces balises, on peut alors créer un attribut
+                           <att>xml:id</att> qui permettra par la suite de référencer les
+                        occurrences du lieu ou du personnage en question au sein du texte. Le nom du
+                        personnage ou du lieu doit ensuite être imbriqué dans une balise
+                           <gi>persName</gi> (pour un personnage) ou <gi>placeName</gi> (pour un nom
+                        de lieu).</p>
+                     <p>Les notices de nom de personnage contiennent le nom du personnage ainsi
+                        qu'une courte notice explicative lorsque cela est nécessaire pour la
+                        compréhension de l'extrait de l'Enéide.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <person xml:id="Enée">
+                           <persName>Enée </persName>
+                           <note>Prince des Troyens. Il est le fils du mortel Anchise et de la
+                              déesse Vénus.</note>
+                        </person>
+                     </egXML>
+                     <p>Les notices de noms de lieux contiennent simplement le nom du lieu.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <place xml:id="Carthage">
+                           <placeName>Carthage</placeName>
+                        </place>
+                     </egXML>
+                  </div4>
+               </div3>
+               <div3>
+                  <head>La structuration des différentes parties du texte</head>
+                  <p>Le corpus est structuré à l'aide des balises suivantes : <specList>
+                        <specDesc key="div"/>
+                        <specDesc key="p"/>
+                        <specDesc key="l"/>
+                        <specDesc key="said"/>
+                        <specDesc key="del"/>
+                     </specList>
+                  </p>
+                  <p>Le texte est structuré à l’intérieur d’une balise <gi>text</gi> avec un
+                     attribut <att>xml:lang</att> de valeur <hi rend="italic"><val>lat</val></hi>
+                     pour signaler que le texte encodé est en latin. L'élément <gi>text</gi> englobe
+                     l'élément <gi>body</gi>. Le <gi>body</gi> présente des <gi>div</gi> de trois
+                     niveaux. La <gi>div</gi> parent possède un attribut <att>type</att> de valeur
+                        <hi rend="italic"><val>edition</val></hi> qui correspond à l'ensemble du
+                     texte de l'édition de Goelzer. La <gi>div</gi> de niveau 2 possède un attribut
+                        <att>type</att> de valeur <hi rend="italic"><val>chant</val></hi> qui
+                     correspond au découpage de l'épopée de Virgile en chants. Chaque chant est
+                     identifié par un numéro qui correspond à la valeur de l'attribut <att>n</att>.
+                     À l’intérieur de la <gi>div</gi> de niveau 2, le texte est englobé dans des
+                     balises <gi>l</gi>. Au sein des chants n'ayant pas été traités, la présence
+                     supposée du texte est figurée par une balise <gi>p</gi>.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <text xml:lang="lat">
+                        <body>
+                           <div type="edition" xml:lang="lat">
+                              <div type="chant" n="1">
+                                 <p/>
+                              </div>
+                              <div type="chant" n="2">
+                                 <p/>
+                              </div>
+                              <div type="chant" n="3">
+                                 <p/>
+                              </div>
+                              <div type="chant" n="4">
+                                 <l n="504">At <persName ref="#Didon">regina</persName>, pyra
+                                    penetrali in <placeName ref="#Palais">sede</placeName> sub
+                                    auras</l>
+                              </div>
+                           </div>
+                        </body>
+                     </text>
+                  </egXML>
+                  <p>Au sein du corpus, chaque vers est englobé dans une balise <gi>l</gi> dont
+                     l'attribut <att>n</att> permet de référencer chacun d'entre eux par un numéro.
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <l n="504">At <persName ref="#Didon">regina</persName>, pyra penetrali in
+                              <placeName ref="#Palais">sede</placeName> sub auras</l>
+                        <l n="505">erecta ingenti taedis atque ilice secta,</l>
+                        <l n="506">intenditque <placeName ref="#Palais">locum</placeName> sertis, et
+                           fronde coronat</l>
+                        <l n="507">funerea; super exuvias ensemque relictum</l>
+                        <l n="508">effigiemque toro locat, haud ignara futuri.</l>
+                     </egXML></p>
+                  <p>Enfin, l’intégralité des vers qui sont de l'ordre du discours direct sont
+                     englobés dans une balise <gi>said</gi> avec un attribut <att>who</att> quand
+                     l’interlocuteur est un personnage nommé dans le récit. La valeur de l’attribut
+                     est alors un pointeur qui renvoie vers la notice du personnage dans le
+                        <gi>teiHeader</gi>.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples"><l n="534"><said who="#Didon">“En,
+                           quid <persName ref="#Didon">ago</persName>? Rursusne procos inrisa
+                           priores</said></l>
+                     <l n="535"><said who="#Didon">experiar, Nomadumque petam conubia
+                           supplex,</said></l>
+                  </egXML>
+               </div3>
+            </div2>
+            <div2>
+               <head>L'apparat critique</head>
+               <p>Cette édition est un texte constitué à partir d’un texte de base qui est l'édition
+                  critique de l'Enéide par Henri Goelzer de 1961. Cette édition propose un apparat
+                  critique afin de faire état des variations entre les différents témoins de la
+                  tradition.</p>
+               <p>Dans une édition scientifique d'un texte ancien, l'apparat critique est l'ensemble
+                  des notes fournies par l'auteur de l'édition pour justifier les choix qu'il a
+                  opérés entre les « leçons », ou versions, des divers manuscrits ou éditions
+                  anciennes qu'il a comparés pour établir le texte de son édition. Si elle fournit
+                  ces informations, alors l'édition est dite "critique". </p>
+               <p>L’intégralité du corpus est ainsi accompagnée du relevé des variantes qui
+                  apparaissent dans les manuscrits antiques ou médiévaux.</p>
+               <div3>
+                  <head>L'encodage de l'apparat critique</head>
+                  <p>La méthode de la <ref
+                        target="http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/TC.html#TCAPPS"
+                        >parallel segmentation</ref> a été choisie pour encoder l'apparat, méthode
+                     qui présente l’avantage d’être simple et lisible directement dans le code, car
+                     l’apparat est signalé dans la linéarité du texte. Elle permet également
+                     d’aisément comparer les leçons entre elles, comme on peut le voir dans
+                     l’exemple suivant.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l n="522">Nox erat, et placidum carpebant fessa soporem</l>
+                     <l n="523">corpora per terras, silvaeque et saeva quierant</l>
+                     <l n="524">aequora: cum medio volvuntur sidera lapsu,</l>
+                     <l n="525">cum tacet omnis ager, pecudes pictaeque volucres,</l>
+                     <l n="526">quaeque lacus late liquidos, quaeque aspera dumis</l>
+                     <l n="527">rura tenent, <app>
+                           <lem wit="#M">somno</lem>
+                           <rdg wit="#P">somnos<note target="#HAVET">cf. Havet § 569</note></rdg>
+                        </app> positae sub nocte silenti</l>
+                  </egXML>
+                  <p>L'édition critique de Goelzer fait apparaître dans l’apparat une hiérarchie
+                     entre deux types de variantes textuelles de la tradition : le lemme et les
+                     leçons. Le lemme correspond à la version que Goelzer a choisi de considérer
+                     comme plus légitime que les autres, lui donnant dans l’édition la primauté sur
+                     les autres leçons.</p>
+                  <p>L'apparat de l'édition de Goelzer semble correspondre à ce qu'on nomme un
+                     apparat positif, c'est à dire qu'il fait figurer explicitement les leçons de
+                     chaque témoin accompagné de son sigle. Chaque leçon est rattachée au manuscrit
+                     dont elle est issue par un identifiant qui renvoie dans le <gi>TEIheader</gi>
+                     au <gi>witness</gi> correspondant.</p>
+
+                  <p>Afin d'encoder l'apparat nous utilisons les balises suivantes : <specList>
+                        <specDesc key="app"/>
+                        <specDesc key="lem"/>
+                        <specDesc key="rdg"/>
+                     </specList>. </p>
+                  <p>La balise <gi>lem</gi> permet de délimiter le texte soumis à des variations et
+                     contient toujours le texte édité. Chaque apparat ne peut contenir qu'un élément
+                        <hi>lem</hi>.Les balises <gi>rdg</gi> permettent de signaler les variantes.
+                     Leur attribut <att>wit</att> permet de déclarer le ou les manuscrits proposant
+                     le même texte que celui de la variante concernée. <egXML
+                        xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem wit="#P">primam</lem>
+                           <rdg wit="#M #γ2 #b #c #π #PERSEUS">primum</rdg>
+                        </app>
+                     </egXML>
+                  </p>
+               </div3>
+               <div3>
+                  <head>Quels sont les avantages d’une édition critique nativement numérique, par
+                     rapport à une édition papier traditionnelle ?</head>
+                  <p>L’édition critique est le fruit d’une longue tradition : des règles très
+                     précises ont été édictées afin de guider le chercheur dans chacune des étapes
+                     de l'établissement du texte. C'est cette tradition qui a assuré à l'édition
+                     critique le prestige dont elle bénéficie. La conformité à la tradition sert
+                     également de repère au sein de la communauté scientifique pour accorder ou non
+                     du crédit à une édition.</p>
+                  <p>L’apparition des recommandations TEI ont cependant suscité de profondes
+                     transformations dans l’exercice de cette discipline. Il est plus facile
+                     aujourd'hui de comparer les variantes, de compter les fautes communes et donc
+                     d'établir le texte. Les chercheurs Joana Casenave et Yves Marcoux rapportent
+                     dans l'une de leur publication le cas du Canterbury Tales Project mené par
+                     Peter Robinson, qui a donné lieu au développement du programme informatique
+                     Collate pour aider à la collation automatique des manuscrits. De la même
+                     manière, ils expliquent que les éditeurs critiques électroniques s'attachent
+                     aujourd'hui à développer des plates-formes de consultation de leurs éditions,
+                     en y intégrant une documentation annexe de plus en plus dense et complète.</p>
+                  <p>Dans le prolongement de ces constats, on peut souligner que l'encodage de
+                     l'apparat critique de l'Enéide dans le cadre de ce projet permet de mettre en
+                     valeur les nombreux avantages que comporte une édition critique nativement
+                     numérique par rapport à une édition papier traditionnelle.</p>
+                  <p>Le plus important à mon sens est le fait de pouvoir appréhender en même temps
+                     dans le corps du texte le lemme et les leçons, c'est à dire la version retenue
+                     pour l'édition et ses variations. En effet, dans l'édition critique
+                     traditionnelle, il peut être parfois contraignant de devoir faire des
+                     allers-retours constants entre le corps du texte et les notes de bas de
+                     page.</p>
+                  <p>A cela, il faut ajouter le fait que les notes de bas de page, y compris celles
+                     de l'édition des Belles Lettres, contiennent un certain nombre de sigles et
+                     d'abbréviations qui rendent le repérage difficile pour un lecteur non initié.
+                     Or, l'encodage permet un système de pointage vers des références établies dans
+                     le TEI header qui peut s'avérer beaucoup plus aisé à prendre en main, qu'il
+                     s'agisse des <gi>lem</gi> et des <gi>rdg</gi> ou des balises <gi>note</gi>.</p>
+                  <p>Du point de vue des éditeurs critiques, ce système de référence rend plus
+                     facile le repérage des erreurs ou des corrections, ainsi que la comparaison
+                     entre les différents manuscrits. De même, une édition critique nativement
+                     numérique ouvre nombre de possibilités dans les champs de la recherche en
+                     science humaines, notamment en ce qui concerne l'automatisation du traitement
+                     des données. Comme il en est fait mention un peu plus haut, la collation des
+                     manuscrits peut-être notamment beaucoup facilitée par ce biais. </p>
+                  <p>De surcroit cet encodage offre la possibilité, au moyen d'un document XSLT, de
+                     proposer des visualisations qui permettraient d'intégrer à la fois les leçons
+                     et les lemmes afin que le lecteur puisse avoir un aperçu rapide des formes
+                     retenues et des variations dans les autres manuscrits.</p>
+                  <p>Enfin, soulignons qu'une édition nativement numérique ne vise nullement à
+                     renier la tradition critique, mais au contraire s'appuie énormément sur cette
+                     tradition, et se conçoit véritablement comme un prolongement permettant de
+                     renouveler les pratiques et les possibilités dans les champs de la recherche en
+                     sciences humaines.</p>
+               </div3>
+            </div2>
+         </div1>
+         <div1>
+            <head>Tableau des éléments</head>
+            <schemaSpec ident="oddbyexample" start="TEI ">
+               <moduleRef key="tei"/>
+
+               <!-- Apparat critique -->
+               <classRef key="att.textCritical"/>
+               <classRef key="att.witnessed"/>
+               <classRef key="model.rdgLike"/>
+               <classRef key="model.rdgPart"/>
+               <moduleRef key="textcrit" include="app lem rdg rdgGrp listWit witness"/>
+
+               <elementSpec ident="app" mode="change">
+                  <gloss>Apparat</gloss>
+                  <desc>Permet d'englober les différentes leçons.</desc>
+                  <content>
+                     <sequence preserveOrder="true">
+                        <elementRef key="lem" minOccurs="0" maxOccurs="1"/>
+                        <elementRef key="rdg" minOccurs="1" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="from" mode="delete"/>
+                     <attDef ident="to" mode="delete"/>
+                     <attDef ident="loc" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="lem" mode="change">
+                  <gloss>Lemme</gloss>
+                  <desc>Permet de signaler la leçon choisie dans le texte édité.</desc>
+                  <content>
+                     <sequence preserveOrder="true">
+                        <textNode/>
+                        <elementRef key="placeName" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="note" minOccurs="0" maxOccurs="1"/>
+                     </sequence>
+                  </content>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+
+               <elementSpec ident="rdg" mode="change">
+                  <gloss>Leçon</gloss>
+                  <desc>Permet de signaler une leçon différente de celle du texte édité.</desc>
+                  <content>
+                     <sequence preserveOrder="true">
+                        <textNode/>
+                        <elementRef key="note" minOccurs="0" maxOccurs="2"/>
+                     </sequence>
+                  </content>
+                  <constraintSpec ident="witforrdg" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:rdg"/>
+                        <s:assert test="@wit">An attribute @wit must be supplied</s:assert>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="wit" mode="change" usage="req"> </attDef>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="listWit" mode="change">
+                  <gloss>Liste des témoins</gloss>
+                  <desc>Liste qui contient tous les témoins auxquels se réfère l'auteur au sein de
+                     son apparat critique.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="witness" mode="change">
+                  <gloss>Témoin</gloss>
+                  <desc>Contient un témoin auquel l'auteur se réfère au sein de l'apparat
+                     critique.</desc>
+                  <content>
+                     <sequence preserveOrder="true">
+                        <textNode/>
+                        <elementRef key="date" minOccurs="0" maxOccurs="1"/>
+                        <textNode/>
+                        <elementRef key="note" minOccurs="0" maxOccurs="1"/>
+                        <textNode/>
+                     </sequence>
+                  </content>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="xml:id" mode="change" usage="req"/>
+                     <attDef ident="facs" mode="add" usage="opt"/>
+                  </attList>
+               </elementSpec>
+
+               <classSpec ident="att.textCritical" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="cause" mode="delete"/>
+                     <attDef ident="varSeq" mode="delete"/>
+                     <attDef ident="require" mode="delete"/>
+                  </attList>
+               </classSpec>
+
+               <!--Checking module msdescription-->
+               <classRef key="model.physDescPart"/>
+
+               <!--Checking module namesdates-->
+               <classRef key="model.persNamePart"/>
+               <moduleRef key="namesdates"
+                  include="persName addName placeName listPerson listPlace person place"/>
+               <elementSpec ident="persName" mode="change">
+                  <gloss>Nom du personnage</gloss>
+                  <desc>Permet d'indiquer le nom d'un personnage.</desc>
+                  <attList>
+                     <attDef ident="ref" mode="add" usage="opt">
+                        <valList>
+                           <valItem ident="#Didon"/>
+                           <valItem ident="#Enée"/>
+                           <valItem ident="#Anna"/>
+                           <valItem ident="#Barce"/>
+                           <valItem ident="#Acherbas"/>
+                           <valItem ident="#Ascagne"/>
+                           <valItem ident="#Pygmalion"/>
+                           <valItem ident="#Vénus"/>
+                           <valItem ident="#Mercure"/>
+                           <valItem ident="#Junon"/>
+                           <valItem ident="#Jupiter"/>
+                           <valItem ident="#Iris"/>
+                           <valItem ident="#Proserpine"/>
+                           <valItem ident="#Anna #Didon"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="when" mode="delete"/>
+                     <attDef ident="notBefore" mode="delete"/>
+                     <attDef ident="notAfter" mode="delete"/>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="type" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="Latin"/>
+                           <valItem ident="Phénicien"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="addName" mode="change">
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="type" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="Phénicien"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="placeName" mode="change">
+                  <gloss>Nom de lieu</gloss>
+                  <desc>Permet d'indiquer le nom d'un lieu.</desc>
+                  <attList>
+                     <attDef ident="ref" mode="add" usage="opt">
+                        <valList mode="add" type="closed">
+                           <valItem ident="#Carthage"/>
+                           <valItem ident="#Palais"/>
+                           <valItem ident="#Port"/>
+                           <valItem ident="#Troie"/>
+                           <valItem ident="#Tyr"/>
+                           <valItem ident="#Sidon"/>
+                           <valItem ident="#Olympe"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="when" mode="delete"/>
+                     <attDef ident="notBefore" mode="delete"/>
+                     <attDef ident="notAfter" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="listPerson" mode="change">
+                  <gloss>Liste de personnages</gloss>
+                  <desc>Liste dont les éléments contiennent des informations sur des personnes ou
+                     des groupes de personnes.</desc>
+                  <attList>
+                     <attDef ident="type" mode="change"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="listPlace" mode="change">
+                  <gloss>Liste de lieux</gloss>
+                  <desc>Liste dont les éléments contiennent des informations spatiales.</desc>
+                  <attList>
+                     <attDef ident="type" mode="change"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="person" mode="change">
+                  <gloss>Personne</gloss>
+                  <desc>Contient des informations sur un individu.</desc>
+                  <attList>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="sex" mode="delete"/>
+                     <attDef ident="age" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="xml:id" mode="change" usage="req">
+                        <valList mode="add" type="closed">
+                           <valItem ident="Didon"/>
+                           <valItem ident="Enée"/>
+                           <valItem ident="Anna"/>
+                           <valItem ident="Barce"/>
+                           <valItem ident="Acherbas"/>
+                           <valItem ident="Ascagne"/>
+                           <valItem ident="Pygmalion"/>
+                           <valItem ident="Vénus"/>
+                           <valItem ident="Mercure"/>
+                           <valItem ident="Junon"/>
+                           <valItem ident="Jupiter"/>
+                           <valItem ident="Iris"/>
+                           <valItem ident="Proserpine"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="place" mode="change">
+                  <gloss>Lieu</gloss>
+                  <desc>Contient des informations sur un lieu.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="xml:id" mode="change" usage="req">
+                        <valList mode="add" type="closed">
+                           <valItem ident="Carthage"/>
+                           <valItem ident="Palais"/>
+                           <valItem ident="Port"/>
+                           <valItem ident="Troie"/>
+                           <valItem ident="Tyr"/>
+                           <valItem ident="Sidon"/>
+                           <valItem ident="Olympe"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+
+               <!--Checking module dictionaries-->
+               <classRef key="att.lexicographic"/>
+               <classRef key="model.entryLike"/>
+               <classRef key="model.formPart"/>
+               <classRef key="model.gramPart"/>
+               <classRef key="model.lexicalRefinement"/>
+               <classRef key="model.morphLike"/>
+               <classRef key="model.ptrLike.form"/>
+               <classSpec ident="att.lexicographic" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="expand" mode="delete"/>
+                     <attDef ident="norm" mode="delete"/>
+                     <attDef ident="split" mode="delete"/>
+                     <attDef ident="value" mode="delete"/>
+                     <attDef ident="orig" mode="delete"/>
+                     <attDef ident="location" mode="delete"/>
+                     <attDef ident="mergedIn" mode="delete"/>
+                     <attDef ident="opt" mode="delete"/>
+                  </attList>
+               </classSpec>
+
+               <!--Checking module tagdocs-->
+               <classRef key="att.combinable"/>
+               <classRef key="att.identified"/>
+               <classRef key="model.contentPart"/>
+               <classSpec ident="att.combinable" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="mode" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.identified" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="ident" mode="delete"/>
+                     <attDef ident="predeclare" mode="delete"/>
+                     <attDef ident="module" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.ascribed.directed" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="toWhom" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.dimensions" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="unit" mode="delete"/>
+                     <attDef ident="quantity" mode="delete"/>
+                     <attDef ident="extent" mode="delete"/>
+                     <attDef ident="precision" mode="delete"/>
+                     <attDef ident="scope" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.damaged" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="agent" mode="delete"/>
+                     <attDef ident="degree" mode="delete"/>
+                     <attDef ident="group" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.datable.w3c" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="from" mode="delete"/>
+                     <attDef ident="to" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.datable" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="calendar" mode="delete"/>
+                     <attDef ident="period" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.divLike" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="org" mode="delete"/>
+                     <attDef ident="sample" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.media" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="width" mode="delete"/>
+                     <attDef ident="height" mode="delete"/>
+                     <attDef ident="scale" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.naming" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="nymRef" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.pointing" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="targetLang" mode="delete"/>
+                     <attDef ident="evaluate" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.pointing.group" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="domains" mode="delete"/>
+                     <attDef ident="targFunc" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.segLike" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="function" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.timed" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="start" mode="delete"/>
+                     <attDef ident="end" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.transcriptional" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="status" mode="delete"/>
+                     <attDef ident="cause" mode="delete"/>
+                     <attDef ident="seq" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.personal" type="atts" mode="delete">
+                  <attList>
+                     <attDef ident="full" mode="delete"/>
+                     <attDef ident="sort" mode="delete"/>
+                  </attList>
+               </classSpec>
+
+               <!--Checking module core-->
+               <moduleRef key="core"
+                  include="p said del name address addrLine date head note monogr author editor title imprint publisher pubPlace bibl biblStruct listBibl l"/>
+
+               <elementSpec ident="p" mode="change">
+                  <gloss>Paragraphe</gloss>
+                  <desc>Contient un bloc de texte en prose</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="part" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="said" mode="change">
+                  <gloss>Discours direct</gloss>
+                  <desc>Permet d'indiquer lorsque qu'un personnage prend la parole.</desc>
+                  <attList>
+                     <attDef ident="aloud" mode="delete"/>
+                     <attDef ident="direct" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="del" mode="change">
+                  <gloss>Suppression</gloss>
+                  <desc>Permet d'indiquer la suppression d'un passage dans le texte.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="name" mode="delete">
+                  <gloss>Nom</gloss>
+                  <desc>Contient un nom propre ou un groupe nominal.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="when" mode="delete"/>
+                     <attDef ident="notBefore" mode="delete"/>
+                     <attDef ident="notAfter" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+
+               </elementSpec>
+               <elementSpec ident="address" mode="change">
+                  <gloss>Adresse</gloss>
+                  <desc>Spécifie l'emplacement d'un lieu, d'une personne, d'une ressource.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="addrLine" mode="change">
+                  <gloss>Adresse</gloss>
+                  <desc>Permet de spécifier l'adresse ligne par ligne.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="date" mode="change">
+                  <gloss>Date</gloss>
+                  <desc>Permet d'indiquer la couverture temporelle.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="release"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="when" mode="change" usage="opt"/>
+                     <attDef ident="notBefore" mode="change" usage="opt"/>
+                     <attDef ident="notAfter" mode="change" usage="opt"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="head" mode="change">
+                  <gloss>Titre</gloss>
+                  <desc>Permet d'indiquer un titre autre que le titre de l'oeuvre, notamment pour
+                     structurer et préciser l'encodage.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="note" mode="change">
+                  <gloss>Note</gloss>
+                  <desc>Contient une annotation. Ici, elle peut contenir un attribut @target
+                     permettant de lier la note en question à une référence bibliographique.</desc>
+                  <attList>
+                     <attDef ident="anchored" mode="delete"/>
+                     <attDef ident="targetEnd" mode="delete"/>
+                     <attDef ident="source" mode="change"/>
+                     <attDef ident="type" mode="change"/>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="target" mode="change" usage="opt">
+                        <valList mode="add" type="closed">
+                           <valItem ident="#SERV"/>
+                           <valItem ident="#D.-SERV"/>
+                           <valItem ident="#RIBBECK"/>
+                           <valItem ident="#HAVET"/>
+                           <valItem ident="#KVICALA"/>
+                           <valItem ident="#DEUTICKE"/>
+                           <valItem ident="#HIRTZEL"/>
+                           <valItem ident="#NONIUS"/>
+                           <valItem ident="#PROBUS"/>
+                           <valItem ident="#HEINSIUS"/>
+                           <valItem ident="#PERSEUS"/>
+                           <valItem ident="#GOELZER"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="monogr" mode="change">
+                  <gloss>Monographie</gloss>
+                  <desc>Elément obligatoire de la balise 'biblStruct'.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="author" mode="change">
+                  <gloss>Auteur</gloss>
+                  <desc>Permet d'indiquer le nom du ou des auteur(s).</desc>
+                  <attList>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="xml:lang" mode="change" usage="opt"/>
+                     <attDef ident="key" mode="change" usage="opt">
+                        <valList mode="add" type="closed">
+                           <valItem ident="Virgile (0070-0019 av. J.-C.)"/>
+                           <valItem ident="Vergilius Maro, Publius (0070-0019 av. J.-C.)"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="source" mode="change" usage="opt"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="editor" mode="change">
+                  <gloss>Editeur</gloss>
+                  <desc>Permet d'indiquer le nom de l'éditeur ou de la maison d'édition.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="ref" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="title" mode="change">
+                  <gloss>Titre</gloss>
+                  <desc>Permet d'indiquer un titre (pour une oeuvre).</desc>
+                  <attList>
+                     <attDef ident="level" mode="delete"/>
+                     <attDef ident="type" mode="change" usage="opt">
+                        <valList mode="add" type="closed">
+                           <valItem ident="subtitle"/>
+                           <valItem ident="work"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="when" mode="delete"/>
+                     <attDef ident="notBefore" mode="delete"/>
+                     <attDef ident="notAfter" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="imprint" mode="change">
+                  <gloss>Imprimé</gloss>
+                  <desc>Elément obligatoire de la balise 'biblStruct', compris dans 'monogr'.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="publisher" mode="change">
+                  <gloss>Editeur</gloss>
+                  <desc>Permet d'indiquer le nom de l'éditeur ou de la maison d'édition.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="ref" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="pubPlace" mode="change">
+                  <gloss>Lieu d'édition</gloss>
+                  <desc>Permet d'indiquer le lieu d'édition.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="ref" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="bibl" mode="change">
+                  <gloss>Bibliographie</gloss>
+                  <desc>Contient une citation bibliographique non obligatoirement structurée.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="xml:id" mode="change" usage="req"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="biblStruct" mode="change">
+                  <gloss>Bibliographie</gloss>
+                  <desc>Contient une citation bibliographique structurée dans laquelle les éléments
+                     apparaissent dans un ordre spécifique.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="listBibl" mode="change">
+                  <gloss>Bibliographie</gloss>
+                  <desc>Contient une liste de citations bibliographiques.</desc>
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="l" mode="change">
+                  <gloss>Vers</gloss>
+                  <desc>Signale les vers.</desc>
+                  <constraintSpec ident="lineNumber" scheme="isoschematron">
+                     <constraint>
+                        <s:rule context="tei:l[@n]">
+                           <!-- le contexte est plus ou moins erroné, l'attribut est en trop, 
+                           sinon vous ne considérez que les l avec un attribut @n -->
+                           <s:assert
+                              test="number(@n) = number(preceding-sibling::tei:l[1]/@n) + 1 or count(preceding-sibling::tei:l[1]/@n) = 0"
+                              > value of @n is wrong </s:assert>
+                           <!-- très bonne règle (+1), vous avez réussi le plus difficile, mais pas associé le schematron à votre schéma -->
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <!-- Attention règle test, je pense, que nous n'avez pas enlevé
+                  <constraintSpec scheme="isoschematron" ident="lineNumber">
+                     <constraint>
+                        <s:rule context="tei:l[@n]">
+                           <s:assert test="matches(@n, '0123456789')">@n='0123456789'</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  -->
+                  <attList>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="part" mode="delete"/>
+                     <attDef ident="n" mode="change" usage="req"/>
+                  </attList>
+               </elementSpec>
+
+               <!--Le TEIheader-->
+               <moduleRef key="header"
+                  include="teiHeader fileDesc titleStmt editionStmt edition extent publicationStmt sourceDesc encodingDesc projectDesc profileDesc langUsage language revisionDesc change"/>
+               <elementSpec ident="teiHeader" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="fileDesc" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="titleStmt" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="editionStmt" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="edition" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="extent" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="publicationStmt" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="sourceDesc" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="default" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="false"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="encodingDesc" mode="change">
+                  <content>
+                     <sequence preserveOrder="true">
+                        <elementRef key="variantEncoding" minOccurs="1" maxOccurs="1"/>
+                        <elementRef key="projectDesc" minOccurs="1" maxOccurs="1"/>
+                     </sequence>
+                  </content>
+                  <attList>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               
+               <elementSpec ident="variantEncoding" mode="add">
+                  <attList>
+                     <attDef ident="method" mode="add" usage="req">
+                        <valList mode="add" type="closed">
+                           <valItem ident="parallel-segmentation"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="location" mode="add" usage="req">
+                        <valList mode="add" type="closed">
+                           <valItem ident="internal"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               
+               <elementSpec ident="projectDesc" mode="change">
+                  <attList>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="default" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="false"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="profileDesc" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="langUsage" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="default" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="false"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="language" mode="change">
+                  <attList>
+                     <attDef ident="usage" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="revisionDesc" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="change" mode="change">
+                  <attList>
+                     <attDef ident="target" mode="delete"/>
+                     <attDef ident="notBefore" mode="delete"/>
+                     <attDef ident="notAfter" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <!--Checking module verse-->
+               <!--Checking module transcr-->
+               <!--Checking module linking-->
+               <classRef key="att.global.linking"/>
+               <classSpec ident="att.global.linking" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <!--Checking module analysis-->
+               <!--Checking module textstructure-->
+               <moduleRef key="textstructure" include="TEI text body div div1 div2 div3 div4"/>
+               <elementSpec ident="TEI" mode="change">
+                  <attList>
+                     <attDef ident="version" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="text" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="body" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="div" mode="change">
+                  <content>
+                     <sequence preserveOrder="true">
+                        <elementRef key="head" minOccurs="0" maxOccurs="1"/>
+                        <elementRef key="p" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="div" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="l" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="chant"/>
+                           <valItem ident="edition"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="div1" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="div2" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="div3" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="div4" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <!--Checking module corpus-->
+               <moduleRef key="corpus" include="particDesc settingDesc"/>
+               <elementSpec ident="particDesc" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="default" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="settingDesc" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="default" mode="delete"/>
+                  </attList>
+               </elementSpec>
+            </schemaSpec>
+         </div1>
+      </body>
+   </text>
+</TEI>
